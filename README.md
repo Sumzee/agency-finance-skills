@@ -23,7 +23,7 @@ Start with the Profit Agent. It shows what you can see today and what data is mi
 
 **In the Claude app (claude.ai, desktop or mobile)** — no code needed
 
-1. Download the zip for the skill you want from [Releases](../../releases) (or the [`dist/`](dist) folder).
+1. Download the zip: [Profit Agent](https://github.com/Sumzee/agency-finance-skills/raw/main/dist/sumzee-profit-agent.zip) · [System Builder](https://github.com/Sumzee/agency-finance-skills/raw/main/dist/sumzee-system-builder.zip) — or get both at [sumzee.co/skills](https://www.sumzee.co/skills).
 2. In Claude: **Customize → Skills → upload** the zip, as is (don't unzip it).
 3. Make sure code execution is on, then say *"Here are my finance files — how much are we actually making?"* and attach them.
 
@@ -32,7 +32,7 @@ Step-by-step guides with screenshots are inside each zip (`00_READ-ME-BEFORE-YOU
 **In Claude Code**
 
 ```
-/plugin marketplace add sumzee/agency-finance-skills
+/plugin marketplace add Sumzee/agency-finance-skills
 /plugin install agency-finance@sumzee
 ```
 
@@ -40,7 +40,7 @@ The System Builder needs the Airtable connector (with access to a whole workspac
 
 ## Try it without your own numbers
 
-[`examples/lumen-creative/data`](examples/lumen-creative/data) holds nine months of invented data for a 15-person agency: an invoice export, a bank export and a timesheet. Attach the three files and ask the Profit Agent what's going on. (Spoiler: €156k profit, €20k in the bank.)
+[Download the sample agency](https://github.com/Sumzee/agency-finance-skills/raw/main/dist/sumzee-sample-agency.zip): nine months of invented data for a 15-person agency — an invoice export, a bank export and a timesheet ([browse the files](examples/lumen-creative/data)). Attach the three files and ask the Profit Agent what's going on. (Spoiler: €156k profit, €20k in the bank.)
 
 ## Your data stays yours
 

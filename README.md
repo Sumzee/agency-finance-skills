@@ -57,6 +57,6 @@ The skills get you a first version. Sumzee sets up the rest for 10–30 person a
 
 ## Questions and feedback
 
-Open an [issue](../../issues) — questions, bugs and "it got my business wrong" are all welcome.
+Open an [issue](../../issues) or write to gpbalon@gmail.com — questions, bugs and "it got my business wrong" are all welcome.
 
 MIT licensed. Built from two real systems: an agency with projects across several entities and currencies, and a subscription-based choir.

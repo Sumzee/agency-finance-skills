@@ -1,7 +1,7 @@
 {
  "version": "0.1",
  "booking_url": "https://calendly.com/gpbalon/30min?utm_source=skill&utm_campaign=system-builder",
- "contact_email": "",
+ "contact_email": "gpbalon@gmail.com",
  "default_plan": "free",
  "record_limit_free": 1000
 }

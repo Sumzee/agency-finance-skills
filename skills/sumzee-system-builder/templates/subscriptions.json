@@ -1,0 +1,67 @@
+{
+  "id": "subscriptions",
+  "label": {"en": "Subscriptions and passes", "ru": "Подписки и абонементы"},
+  "status": "draft",
+  "based_on": "Choir CRM (Payments and Attendance seen on screenshots; Members, Subscriptions, Price reconstructed). Attendance is a module.",
+  "fits": {"en": "Studios, schools, choirs, clubs, memberships, simple recurring services: clients buy a pass, a pack of sessions or a monthly subscription.", "ru": "Студии, школы, хоры, клубы, членство, простые регулярные услуги: клиенты покупают абонемент, пакет занятий или месячную подписку."},
+  "relabel": {
+    "Clients": {"label": {"en": "Members", "ru": "Участники"}, "description": {"en": "One record = one member (a person who buys passes or subscriptions).", "ru": "Одна запись = один участник (человек, который покупает абонементы или подписку)."}}
+  },
+  "tables": [
+    {
+      "name": "Plans",
+      "label": {"en": "Price list", "ru": "Прайс"},
+      "group": "sales",
+      "description": {"en": "What can be bought: single visit, pack of N sessions, unlimited for a period, monthly subscription, trial.", "ru": "Что можно купить: разовое занятие, пакет на N занятий, безлимит на период, месячная подписка, пробное."},
+      "entered_by": {"en": "The owner, when prices change", "ru": "Владелец, когда меняются цены"},
+      "fields": [
+        {"name": "Plan", "type": "singleLineText"},
+        {"name": "Type", "type": "singleSelect", "choices": ["Single", "Pack", "Unlimited", "Monthly subscription", "Trial"], "description": {"en": "Pack = N sessions. Unlimited = any number of sessions for N days. Monthly subscription = charged every month until cancelled.", "ru": "Pack — N занятий. Unlimited — сколько угодно занятий за N дней. Monthly subscription — списывается каждый месяц до отмены."}},
+        {"name": "Price", "type": "currency"},
+        {"name": "Sessions", "type": "number", "precision": 0, "description": {"en": "For packs: how many sessions are included.", "ru": "Для пакетов: сколько занятий входит."}},
+        {"name": "Days valid", "type": "number", "precision": 0, "description": {"en": "How many days the pass is valid (for packs and unlimited).", "ru": "Сколько дней действует абонемент (для пакетов и безлимита)."}},
+        {"name": "Active", "type": "checkbox", "description": {"en": "Untick old prices instead of deleting them — history keeps working.", "ru": "Старые цены не удалять, а снять галочку — история продолжит считаться."}},
+        {"name": "Times sold", "type": "count", "via": "Subscriptions", "description": {"en": "Computed.", "ru": "Считается само."}}
+      ]
+    },
+    {
+      "name": "Subscriptions",
+      "label": {"en": "Passes and subscriptions", "ru": "Абонементы и подписки"},
+      "group": "sales",
+      "description": {"en": "One record = one pass or subscription bought by a member.", "ru": "Одна запись = один купленный абонемент или подписка участника."},
+      "entered_by": {"en": "Admin, when a member buys", "ru": "Администратор, когда участник покупает"},
+      "fields": [
+        {"name": "Subscription", "type": "autoNumber"},
+        {"name": "Member", "type": "link", "to": "Clients", "inverse": "Subscriptions", "required": true},
+        {"name": "Plan", "type": "link", "to": "Plans", "inverse": "Subscriptions", "required": true},
+        {"name": "Start date", "type": "date", "required": true},
+        {"name": "Cancelled on", "type": "date", "description": {"en": "Only for monthly subscriptions: the day the member stopped.", "ru": "Только для месячной подписки: день, когда участник отказался."}},
+        {"name": "Plan type", "type": "rollup", "via": "Plan", "field": "Type", "formula": "ARRAYJOIN(values)", "description": {"en": "Technical copy of the plan type for formulas. Do not edit.", "ru": "Техническая копия типа из прайса для формул. Не трогать."}},
+        {"name": "Plan price", "type": "rollup", "via": "Plan", "field": "Price", "formula": "SUM(values)", "description": {"en": "Technical copy for formulas. Do not edit.", "ru": "Техническая копия для формул. Не трогать."}},
+        {"name": "Plan sessions", "type": "rollup", "via": "Plan", "field": "Sessions", "formula": "SUM(values)", "description": {"en": "Technical copy for formulas. Do not edit.", "ru": "Техническая копия для формул. Не трогать."}},
+        {"name": "Plan days", "type": "rollup", "via": "Plan", "field": "Days valid", "formula": "SUM(values)", "description": {"en": "Technical copy for formulas. Do not edit.", "ru": "Техническая копия для формул. Не трогать."}},
+        {"name": "Valid until", "type": "formula", "formula": "IF(AND({Start date}, {Plan days}), DATEADD({Start date}, {Plan days}, 'days'), '')", "description": {"en": "Computed.", "ru": "Считается само."}},
+        {"name": "Paid", "type": "rollup", "via": "Payments", "field": "Revenue amount", "formula": "SUM(values)", "description": {"en": "Computed.", "ru": "Считается само."}},
+        {"name": "Unpaid", "type": "formula", "formula": "IF({Plan type} = 'Monthly subscription', '', {Plan price} - {Paid})", "description": {"en": "For passes: how much is still owed. Computed.", "ru": "Для абонементов: сколько ещё не оплачено. Считается само."}},
+        {"name": "Monthly value", "type": "formula", "formula": "IF(AND({Plan type} = 'Monthly subscription', NOT({Cancelled on})), {Plan price}, 0)", "description": {"en": "What this subscription brings every month while active (MRR). Computed.", "ru": "Сколько подписка приносит в месяц, пока активна (MRR). Считается само."}},
+        {"name": "Status", "type": "formula", "formula": "IF({Cancelled on}, 'Cancelled', IF(AND({Valid until}, IS_BEFORE({Valid until}, TODAY())), 'Expired', 'Active'))", "description": {"en": "Computed.", "ru": "Считается само."}}
+      ]
+    }
+  ],
+  "extend": {
+    "Payments": [
+      {"name": "Subscription", "type": "link", "to": "Subscriptions", "inverse": "Payments", "description": {"en": "Which pass or subscription the payment is for. Leave empty for single visits and trials.", "ru": "За какой абонемент или подписку оплата. Для разовых и пробных можно оставить пустым."}},
+      {"name": "Method", "type": "singleSelect", "choices": ["Card", "Bank transfer", "Cash", "Online"], "description": {"en": "Cash and personal cards: also pick the Account of the person who holds the money.", "ru": "Наличные и личные карты: обязательно укажите «Счёт» того, у кого деньги."}}
+    ]
+  },
+  "questions": [
+    {"text": {"en": "How many active members and passes we have", "ru": "Сколько сейчас активных участников и абонементов"}, "tables": ["Subscriptions", "Clients"]},
+    {"text": {"en": "Monthly recurring revenue and how it changes", "ru": "Сколько приносят подписки каждый месяц и как это меняется"}, "tables": ["Subscriptions", "Payments"]},
+    {"text": {"en": "Which plans sell best", "ru": "Какие абонементы покупают чаще"}, "tables": ["Plans", "Subscriptions"]},
+    {"text": {"en": "Whose pass ends soon — time to remind them", "ru": "У кого скоро заканчивается абонемент — пора напомнить"}, "tables": ["Subscriptions"]}
+  ],
+  "roles": {
+    "subscription": {"table": "Subscriptions", "member": "Member", "plan": "Plan", "start": "Start date", "end": "Valid until", "cancelled": "Cancelled on", "monthly_value": "Monthly value", "status": "Status"}
+  },
+  "modules_suggested": ["attendance"]
+}

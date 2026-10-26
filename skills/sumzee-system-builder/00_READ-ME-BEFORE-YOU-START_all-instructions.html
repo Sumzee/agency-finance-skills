@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sumzee System Builder — инструкция</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f6f2;--card:#fff;--ink:#1d1d1b;--muted:#6b6a64;--line:#e4e1d8;--accent:#2f5bea;--accent-soft:#e8eefe;
+--ok:#0f9d76;--warn:#c2410c;--warn-soft:#fdf0e7}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#151514;--card:#1f1f1d;--ink:#f1efe8;--muted:#a3a197;
+--line:#34332f;--accent:#7b9bff;--accent-soft:#232b45;--ok:#3ccf9f;--warn:#f08a4b;--warn-soft:#3a2618}}
+:root[data-theme="dark"]{--bg:#151514;--card:#1f1f1d;--ink:#f1efe8;--muted:#a3a197;--line:#34332f;--accent:#7b9bff;
+--accent-soft:#232b45;--ok:#3ccf9f;--warn:#f08a4b;--warn-soft:#3a2618}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink)}
+body{font:16px/1.55 Manrope,system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:760px;margin:0 auto;padding:32px 16px 64px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{font-weight:800;letter-spacing:-.01em}.brand span{color:var(--accent)}
+.lang{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.lang button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:14px;font-weight:600;padding:6px 12px;cursor:pointer}
+.lang button.on{background:var(--accent);color:#fff}
+h1{font-size:36px;line-height:1.12;letter-spacing:-.025em;margin:36px 0 12px}
+h2{font-size:23px;letter-spacing:-.015em;margin:48px 0 14px}
+.lead{font-size:18px;color:var(--muted);margin:0}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.need{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.need .box{padding:16px}.need b{display:block;font-size:15px}.need span{font-size:14px;color:var(--muted)}
+.icon{font-size:22px;display:block;margin-bottom:6px}
+.step{display:grid;grid-template-columns:44px 1fr;gap:14px;margin-bottom:14px}
+.num{width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:19px;
+display:flex;align-items:center;justify-content:center}
+.step h3{margin:6px 0 6px;font-size:18px}.step p{margin:6px 0}
+.path{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0}
+.btn{display:inline-block;padding:4px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);
+font-size:14px;font-weight:600;white-space:nowrap}
+.arrow{color:var(--muted)}
+.say{background:var(--accent-soft);border-radius:12px;padding:12px 14px;font-weight:600;margin:10px 0}
+.note{background:var(--warn-soft);border-left:3px solid var(--warn);border-radius:10px;padding:10px 14px;font-size:15px;margin:10px 0}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;counter-reset:f}
+.flow .box{padding:14px;position:relative}.flow b{display:block;font-size:15px}.flow span{font-size:14px;color:var(--muted)}
+.flow .box:before{counter-increment:f;content:counter(f);position:absolute;top:12px;right:14px;font-weight:800;color:var(--accent);opacity:.5}
+.flow .you{border-color:var(--accent)}
+.tag{display:block;font-size:12px;font-weight:700;color:var(--accent);margin-top:6px}
+ul.ok{list-style:none;padding:0;margin:0}ul.ok li{padding:8px 0 8px 30px;position:relative;border-bottom:1px dashed var(--line)}
+ul.ok li:last-child{border-bottom:0}ul.ok li:before{content:"✓";position:absolute;left:4px;color:var(--ok);font-weight:800}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-bottom:8px}
+summary{cursor:pointer;font-weight:700}details p{margin:8px 0 2px;color:var(--muted)}
+.cta{text-align:center}.cta a{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;text-decoration:none;
+font-weight:700;padding:12px 20px;border-radius:12px}
+footer{margin-top:48px;font-size:13px;color:var(--muted);text-align:center}
+[data-l]{display:none}html[lang="ru"] [data-l="ru"],html[lang="en"] [data-l="en"]{display:revert}
+@media (max-width:600px){h1{font-size:29px}.flow{grid-template-columns:1fr 1fr}}
+</style></head>
+<body><main>
+
+<div class="top"><div class="brand">sum<span>zee</span> · System Builder</div>
+<div class="lang"><button data-set="ru" class="on">RU</button><button data-set="en">EN</button></div></div>
+
+<!-- ============ RU ============ -->
+<div data-l="ru">
+<h1>Соберите систему учёта вашего бизнеса в Airtable — за один разговор с Claude</h1>
+<p class="lead">Вы отвечаете на несколько вопросов, видите схему своей системы, а Claude сам создаёт базу в Airtable и переносит туда ваши данные.</p>
+
+<h2>Что понадобится</h2>
+<div class="need">
+<div class="box"><span class="icon">💬</span><b>Аккаунт Claude</b><span>подойдёт и бесплатный</span></div>
+<div class="box"><span class="icon">🗂️</span><b>Аккаунт Airtable</b><span>бесплатного хватит для старта</span></div>
+<div class="box"><span class="icon">📊</span><b>Ваши таблицы</b><span>Excel или Google Sheets — если есть, но не обязательно</span></div>
+<div class="box"><span class="icon">⏱️</span><b>30–60 минут</b><span>можно делать с перерывами</span></div>
+</div>
+
+<h2>Установка — 4 шага</h2>
+
+<div class="step"><div class="num">1</div><div>
+<h3>Разрешите Claude работать с файлами</h3>
+<p>Откройте Claude и включите выполнение кода — без него скиллы не работают.</p>
+<div class="path"><span class="btn">Settings</span><span class="arrow">→</span><span class="btn">Capabilities</span><span class="arrow">→</span><span class="btn">Code execution</span><span class="arrow">→</span><span class="btn">вкл.</span></div>
+<p style="font-size:14px;color:var(--muted)">В Claude для команд (Team, Enterprise) это включает администратор.</p>
+</div></div>
+
+<div class="step"><div class="num">2</div><div>
+<h3>Загрузите скилл</h3>
+<div class="path"><span class="btn">Customize</span><span class="arrow">→</span><span class="btn">Skills</span><span class="arrow">→</span><span class="btn">+</span><span class="arrow">→</span><span class="btn">Create skill</span><span class="arrow">→</span><span class="btn">Upload a skill</span></div>
+<p>Выберите файл <b>sumzee-system-builder.zip</b>.</p>
+<div class="note">Загружайте именно <b>ZIP-файл</b>, который вы скачали, а не распакованную папку. Если вы читаете эту инструкцию, значит, архив уже распакован — вернитесь к исходному файлу .zip.</div>
+</div></div>
+
+<div class="step"><div class="num">3</div><div>
+<h3>Подключите Airtable</h3>
+<p>Нет аккаунта — зарегистрируйтесь на <b>airtable.com</b>, это бесплатно. Затем в Claude:</p>
+<div class="path"><span class="btn">Settings</span><span class="arrow">→</span><span class="btn">Connectors</span><span class="arrow">→</span><span class="btn">Airtable</span><span class="arrow">→</span><span class="btn">Connect</span></div>
+<div class="note">Когда Airtable спросит, к чему дать доступ, выберите <b>всё рабочее пространство (workspace)</b>, а не одну базу. Иначе Claude не сможет создать для вас новую базу.</div>
+</div></div>
+
+<div class="step"><div class="num">4</div><div>
+<h3>Начните разговор</h3>
+<p>Откройте новый чат, приложите свои таблицы (если есть) и напишите:</p>
+<div class="say">«Хочу навести порядок в учёте — собери мне систему в Airtable»</div>
+<p>Claude сам поймёт, что нужен этот скилл. Можно и явно: наберите <span class="btn">/</span> в поле ввода и выберите <b>sumzee-system-builder</b>.</p>
+</div></div>
+
+<h2>Что будет дальше</h2>
+<div class="flow">
+<div class="box"><b>Вопросы</b><span>10–15 минут, с вариантами ответа</span></div>
+<div class="box you"><b>Схема вашей системы</b><span>страница: какие таблицы, как связаны, что вы сможете видеть</span><div class="tag">вы проверяете</div></div>
+<div class="box"><b>Правки</b><span>говорите словами: «часы мы не считаем»</span></div>
+<div class="box you"><b>Создание базы</b><span>Claude спросит разрешения и соберёт базу в Airtable</span><div class="tag">вы разрешаете</div></div>
+<div class="box"><b>Перенос данных</b><span>ваши клиенты, оплаты и расходы — уже в базе, суммы сверены</span></div>
+<div class="box"><b>Итог</b><span>ссылка на базу и что ещё стоит доделать</span></div>
+</div>
+
+<h2>Спокойно о ваших данных</h2>
+<div class="box"><ul class="ok">
+<li>Данные остаются в вашем Claude и вашем Airtable. Sumzee их не видит.</li>
+<li>Ничего не создаётся без вашего «да», и ничего не удаляется.</li>
+<li>Существующие базы в вашем Airtable скилл только читает и никогда не меняет.</li>
+<li>Бесплатный Airtable вмещает 1 000 записей на базу. Скилл заранее скажет, сколько займут ваши данные, и предложит, что перенести.</li>
+</ul></div>
+
+<h2>Если что-то не так</h2>
+<details><summary>Claude не запускает скилл</summary><p>Проверьте шаг 1 (выполнение кода включено) и вызовите скилл явно: наберите «/» и выберите sumzee-system-builder.</p></details>
+<details><summary>Claude остановился перед созданием базы</summary><p>У Claude нет доступа к рабочему пространству Airtable. Повторите шаг 3: переподключите Airtable и выберите всё пространство, а не одну базу. Схема при этом не потеряется — продолжите в том же чате.</p></details>
+<details><summary>Не загружается ZIP</summary><p>Загружайте исходный .zip, не распакованную папку и не отдельные файлы.</p></details>
+<details><summary>Хочу больше, чем умеет скилл</summary><p>Формы для команды, автоматический импорт из банка, дашборды, связка с CRM — это мы настраиваем под ключ.</p></details>
+
+<div class="box cta" style="margin-top:40px"><b>Хотите, чтобы систему довели до конца за вас?</b>
+<p style="color:var(--muted);margin:6px 0 0">Sumzee настраивает процессы, Airtable и единый дашборд для небольших компаний.</p>
+<a href="https://calendly.com/gpbalon/30min?utm_source=guide&utm_campaign=system-builder" target="_blank" rel="noopener">Записаться на звонок</a></div>
+</div>
+
+<!-- ============ EN ============ -->
+<div data-l="en">
+<h1>Build your business's operations system in Airtable — in one conversation with Claude</h1>
+<p class="lead">You answer a few questions and see a schema of your system; Claude then creates the base in Airtable and moves your data in.</p>
+
+<h2>What you need</h2>
+<div class="need">
+<div class="box"><span class="icon">💬</span><b>A Claude account</b><span>the free plan works</span></div>
+<div class="box"><span class="icon">🗂️</span><b>An Airtable account</b><span>free is enough to start</span></div>
+<div class="box"><span class="icon">📊</span><b>Your spreadsheets</b><span>Excel or Google Sheets — if you have them</span></div>
+<div class="box"><span class="icon">⏱️</span><b>30–60 minutes</b><span>breaks are fine</span></div>
+</div>
+
+<h2>Setup — 4 steps</h2>
+
+<div class="step"><div class="num">1</div><div>
+<h3>Let Claude work with files</h3>
+<p>Turn on code execution — skills don't work without it.</p>
+<div class="path"><span class="btn">Settings</span><span class="arrow">→</span><span class="btn">Capabilities</span><span class="arrow">→</span><span class="btn">Code execution</span><span class="arrow">→</span><span class="btn">on</span></div>
+<p style="font-size:14px;color:var(--muted)">On Team and Enterprise plans, an admin turns this on.</p>
+</div></div>
+
+<div class="step"><div class="num">2</div><div>
+<h3>Upload the skill</h3>
+<div class="path"><span class="btn">Customize</span><span class="arrow">→</span><span class="btn">Skills</span><span class="arrow">→</span><span class="btn">+</span><span class="arrow">→</span><span class="btn">Create skill</span><span class="arrow">→</span><span class="btn">Upload a skill</span></div>
+<p>Pick the file <b>sumzee-system-builder.zip</b>.</p>
+<div class="note">Upload the <b>ZIP file</b> you downloaded, not the unzipped folder. If you're reading this, the archive has been unzipped — go back to the original .zip.</div>
+</div></div>
+
+<div class="step"><div class="num">3</div><div>
+<h3>Connect Airtable</h3>
+<p>No account yet? Sign up free at <b>airtable.com</b>. Then in Claude:</p>
+<div class="path"><span class="btn">Settings</span><span class="arrow">→</span><span class="btn">Connectors</span><span class="arrow">→</span><span class="btn">Airtable</span><span class="arrow">→</span><span class="btn">Connect</span></div>
+<div class="note">When Airtable asks what to share, choose <b>the whole workspace</b>, not a single base — otherwise Claude can't create a new base for you.</div>
+</div></div>
+
+<div class="step"><div class="num">4</div><div>
+<h3>Start the conversation</h3>
+<p>Open a new chat, attach your spreadsheets (if any) and write:</p>
+<div class="say">"I want to get my business's books in order — build me a system in Airtable"</div>
+<p>Claude picks up the skill on its own. Or type <span class="btn">/</span> in the message box and choose <b>sumzee-system-builder</b>.</p>
+</div></div>
+
+<h2>What happens next</h2>
+<div class="flow">
+<div class="box"><b>Questions</b><span>10–15 minutes, with answer options</span></div>
+<div class="box you"><b>Your system schema</b><span>a page: which tables, how they connect, what you'll see</span><div class="tag">you review</div></div>
+<div class="box"><b>Corrections</b><span>in plain words: "we don't track hours"</span></div>
+<div class="box you"><b>Building the base</b><span>Claude asks first, then builds it in Airtable</span><div class="tag">you approve</div></div>
+<div class="box"><b>Moving your data</b><span>your clients, payments and costs — in the base, totals checked</span></div>
+<div class="box"><b>Wrap-up</b><span>a link to the base and what's worth finishing</span></div>
+</div>
+
+<h2>About your data</h2>
+<div class="box"><ul class="ok">
+<li>Your data stays in your Claude and your Airtable. Sumzee doesn't see it.</li>
+<li>Nothing is created without your "yes", and nothing is deleted.</li>
+<li>Existing bases in your Airtable are only read, never changed.</li>
+<li>Free Airtable holds 1,000 records per base. The skill tells you upfront how much your data takes and suggests what to move.</li>
+</ul></div>
+
+<h2>If something's off</h2>
+<details><summary>Claude doesn't start the skill</summary><p>Check step 1 (code execution is on) and call it directly: type "/" and choose sumzee-system-builder.</p></details>
+<details><summary>Claude stopped before creating the base</summary><p>Claude has no access to an Airtable workspace. Repeat step 3: reconnect Airtable and choose the whole workspace. The schema isn't lost — continue in the same chat.</p></details>
+<details><summary>The ZIP won't upload</summary><p>Upload the original .zip — not the unzipped folder or single files.</p></details>
+<details><summary>I want more than the skill does</summary><p>Team forms, automatic bank import, dashboards, CRM sync — we set these up for you.</p></details>
+
+<div class="box cta" style="margin-top:40px"><b>Want the system finished for you?</b>
+<p style="color:var(--muted);margin:6px 0 0">Sumzee sets up processes, Airtable and one dashboard for small companies.</p>
+<a href="https://calendly.com/gpbalon/30min?utm_source=guide&utm_campaign=system-builder" target="_blank" rel="noopener">Book a call</a></div>
+</div>
+
+<footer>Sumzee System Builder · v0.1 · sumzee.co</footer>
+</main>
+<script>
+(function(){var h=document.documentElement,bs=document.querySelectorAll('.lang button');
+function set(l){h.lang=l;bs.forEach(function(b){b.classList.toggle('on',b.dataset.set===l)});
+document.title=l==='ru'?'Sumzee System Builder — инструкция':'Sumzee System Builder — how to start';}
+bs.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})});
+if(!/^ru/i.test(navigator.language||'')&&location.hash!=='#ru')set('en');})();
+</script>
+</body></html>

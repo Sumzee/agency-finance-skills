@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sumzee Profit Agent — инструкция</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f6f2;--card:#fff;--ink:#1d1d1b;--muted:#6b6a64;--line:#e4e1d8;--accent:#2f5bea;--accent-soft:#e8eefe;
+--ok:#0f9d76;--warn:#c2410c;--warn-soft:#fdf0e7}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#151514;--card:#1f1f1d;--ink:#f1efe8;--muted:#a3a197;
+--line:#34332f;--accent:#7b9bff;--accent-soft:#232b45;--ok:#3ccf9f;--warn:#f08a4b;--warn-soft:#3a2618}}
+:root[data-theme="dark"]{--bg:#151514;--card:#1f1f1d;--ink:#f1efe8;--muted:#a3a197;--line:#34332f;--accent:#7b9bff;
+--accent-soft:#232b45;--ok:#3ccf9f;--warn:#f08a4b;--warn-soft:#3a2618}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink)}
+body{font:16px/1.55 Manrope,system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:760px;margin:0 auto;padding:32px 16px 64px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{font-weight:800;letter-spacing:-.01em}.brand span{color:var(--accent)}
+.lang{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.lang button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:14px;font-weight:600;padding:6px 12px;cursor:pointer}
+.lang button.on{background:var(--accent);color:#fff}
+h1{font-size:36px;line-height:1.12;letter-spacing:-.025em;margin:36px 0 12px}
+h2{font-size:23px;letter-spacing:-.015em;margin:48px 0 14px}
+.lead{font-size:18px;color:var(--muted);margin:0}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.need{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.need .box{padding:16px}.need b{display:block;font-size:15px}.need span{font-size:14px;color:var(--muted)}
+.icon{font-size:22px;display:block;margin-bottom:6px}
+.step{display:grid;grid-template-columns:44px 1fr;gap:14px;margin-bottom:14px}
+.num{width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:19px;
+display:flex;align-items:center;justify-content:center}
+.step h3{margin:6px 0 6px;font-size:18px}.step p{margin:6px 0}
+.path{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0}
+.btn{display:inline-block;padding:4px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);
+font-size:14px;font-weight:600;white-space:nowrap}
+.arrow{color:var(--muted)}
+.say{background:var(--accent-soft);border-radius:12px;padding:12px 14px;font-weight:600;margin:10px 0}
+.note{background:var(--warn-soft);border-left:3px solid var(--warn);border-radius:10px;padding:10px 14px;font-size:15px;margin:10px 0}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;counter-reset:f}
+.flow .box{padding:14px;position:relative}.flow b{display:block;font-size:15px;padding-right:18px}.flow span{font-size:14px;color:var(--muted)}
+.flow .box:before{counter-increment:f;content:counter(f);position:absolute;top:12px;right:14px;font-weight:800;color:var(--accent);opacity:.5}
+.flow .you{border-color:var(--accent)}
+.tag{display:block;font-size:12px;font-weight:700;color:var(--accent);margin-top:6px}
+.files{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.files .box{padding:14px 16px}.files b{display:block;font-size:15px}.files span{font-size:14px;color:var(--muted)}
+.sees{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.sees .box{padding:14px 16px}.sees b{display:block;font-size:15px}.sees span{font-size:14px;color:var(--muted)}
+ul.ok{list-style:none;padding:0;margin:0}ul.ok li{padding:8px 0 8px 30px;position:relative;border-bottom:1px dashed var(--line)}
+ul.ok li:last-child{border-bottom:0}ul.ok li:before{content:"✓";position:absolute;left:4px;color:var(--ok);font-weight:800}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-bottom:8px}
+summary{cursor:pointer;font-weight:700}details p{margin:8px 0 2px;color:var(--muted)}
+.cta{text-align:center}.cta a{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;text-decoration:none;
+font-weight:700;padding:12px 20px;border-radius:12px}
+footer{margin-top:48px;font-size:13px;color:var(--muted);text-align:center}
+[data-l]{display:none}html[lang="ru"] [data-l="ru"],html[lang="en"] [data-l="en"]{display:revert}
+@media (max-width:600px){h1{font-size:29px}.flow{grid-template-columns:1fr 1fr}}
+</style></head>
+<body><main>
+
+<div class="top"><div class="brand">sum<span>zee</span> · Profit Agent</div>
+<div class="lang"><button data-set="ru" class="on">RU</button><button data-set="en">EN</button></div></div>
+
+<!-- ============ RU ============ -->
+<div data-l="ru">
+<h1>Узнайте, сколько на самом деле зарабатывает ваш бизнес — за 15 минут с Claude</h1>
+<p class="lead">Вы прикладываете свои таблицы как есть, отвечаете на пару вопросов и получаете страницу: прибыль до и после ваших выплат себе, всё ли в порядке с бизнесом и что сделать в первую очередь.</p>
+
+<h2>Что понадобится</h2>
+<div class="need">
+<div class="box"><span class="icon">💬</span><b>Аккаунт Claude</b><span>подойдёт и бесплатный</span></div>
+<div class="box"><span class="icon">📊</span><b>Ваши финансовые файлы</b><span>Excel или CSV — какие есть, порядок не важен</span></div>
+<div class="box"><span class="icon">🧾</span><b>Пара фактов</b><span>как вы платите себе и сколько сейчас на счёте — по желанию</span></div>
+<div class="box"><span class="icon">⏱️</span><b>10–15 минут</b><span>на один разбор</span></div>
+</div>
+
+<h2>Установка — 3 шага</h2>
+
+<div class="step"><div class="num">1</div><div>
+<h3>Разрешите Claude работать с файлами</h3>
+<p>Откройте Claude и включите выполнение кода — без него скиллы не работают.</p>
+<div class="path"><span class="btn">Settings</span><span class="arrow">→</span><span class="btn">Capabilities</span><span class="arrow">→</span><span class="btn">Code execution</span><span class="arrow">→</span><span class="btn">вкл.</span></div>
+<p style="font-size:14px;color:var(--muted)">В Claude для команд (Team, Enterprise) это включает администратор.</p>
+</div></div>
+
+<div class="step"><div class="num">2</div><div>
+<h3>Загрузите скилл</h3>
+<div class="path"><span class="btn">Customize</span><span class="arrow">→</span><span class="btn">Skills</span><span class="arrow">→</span><span class="btn">+</span><span class="arrow">→</span><span class="btn">Create skill</span><span class="arrow">→</span><span class="btn">Upload a skill</span></div>
+<p>Выберите файл <b>sumzee-profit-agent.zip</b>.</p>
+<div class="note">Загружайте именно <b>ZIP-файл</b>, который вы скачали, а не распакованную папку. Если вы читаете эту инструкцию, значит, архив уже распакован — вернитесь к исходному файлу .zip.</div>
+<p style="font-size:14px;color:var(--muted)">Обновляете скилл? Сначала удалите старую версию в том же разделе Skills, потом загрузите новую.</p>
+</div></div>
+
+<div class="step"><div class="num">3</div><div>
+<h3>Начните разговор</h3>
+<p>Откройте новый чат, приложите свои файлы и напишите:</p>
+<div class="say">«Сколько мы реально зарабатываем?»</div>
+<p>Claude сам поймёт, что нужен этот скилл. Можно и явно: наберите <span class="btn">/</span> в поле ввода и выберите <b>sumzee-profit-agent</b>.</p>
+</div></div>
+
+<h2>Какие файлы подойдут</h2>
+<div class="files">
+<div class="box"><b>Выписка из банка</b><span>самый частый вариант; с колонкой остатка — ещё лучше, тогда будет сверка и запас денег</span></div>
+<div class="box"><b>Список счетов или продаж</b><span>с клиентами, проектами и статусом оплаты, если есть</span></div>
+<div class="box"><b>Таблица расходов</b><span>с категориями или без — разберёмся</span></div>
+<div class="box"><b>P&L по месяцам</b><span>месяцы в колонках, статьи в строках</span></div>
+<div class="box"><b>Таймшит</b><span>часы команды по проектам или клиентам — откроет маржу проектов</span></div>
+<div class="box"><b>Строки «Итого», разные написания, лишние шапки</b><span>оставьте как есть, скилл это учтёт</span></div>
+</div>
+<div class="note">Данные в Google Таблицах: <b>Файл → Скачать → Microsoft Excel</b>. В Airtable или бухгалтерии — выгрузите в CSV или Excel. PDF со счетами скилл пока не читает.</div>
+
+<h2>Что будет дальше</h2>
+<div class="flow">
+<div class="box"><b>Несколько вопросов</b><span>модель бизнеса, как вы платите себе, размер команды — с вариантами ответа</span></div>
+<div class="box"><b>Claude разбирает файлы</b><span>сам находит, где выручка, где расходы, что не считать</span></div>
+<div class="box you"><b>1–3 уточнения</b><span>только если от ответа меняются цифры: «перевод на накопительный — это ваши деньги?»</span><div class="tag">вы отвечаете</div></div>
+<div class="box"><b>Проверки и расчёт</b><span>деньги считает код, а не модель — цифры не «плывут»</span></div>
+<div class="box you"><b>Страница с итогом</b><span>файл с дашбордом и короткое резюме в чате</span><div class="tag">вы смотрите</div></div>
+<div class="box"><b>Вопросы дальше</b><span>«почему март такой слабый?», «а если поднять цены?» — в том же чате</span></div>
+</div>
+
+<h2>Что вы увидите на странице</h2>
+<div class="sees">
+<div class="box"><b>Вердикт</b><span>бизнес здоров, требует внимания или есть риск — и почему, в двух предложениях</span></div>
+<div class="box"><b>Прибыль до и после ваших выплат</b><span>две цифры: что зарабатывает бизнес и что остаётся после того, как вы заплатили себе</span></div>
+<div class="box"><b>Что сделать</b><span>2–3 действия с посчитанным эффектом, например «+60 000 ₽ в месяц»</span></div>
+<div class="box"><b>Метрики под ваш бизнес</b><span>для проектов, ретейнеров, подписок и запусков — свои, каждая с нормой</span></div>
+<div class="box"><b>Что мы проверили и исправили</b><span>сверка с остатком, переводы, отменённые счета, чего нет в данных</span></div>
+<div class="box"><b>Что ещё можно было бы увидеть</b><span>графики, для которых не хватает данных, — и каких именно</span></div>
+</div>
+
+<h2>Спокойно о ваших данных</h2>
+<div class="box"><ul class="ok">
+<li>Файлы остаются в вашем Claude. Sumzee их не получает и не видит.</li>
+<li>Опрос «Мы попали?» внизу страницы отправляет только оценки и цвета метрик — без сумм и названий клиентов. Перед отправкой вы видите, что именно уходит.</li>
+<li>Бриф для Sumzee уходит, только если вы сами нажмёте кнопку.</li>
+<li>Email-адреса покупателей на странице скрыты.</li>
+<li>Это управленческий взгляд на цифры, а не бухгалтерская или налоговая отчётность.</li>
+</ul></div>
+
+<h2>Если что-то не так</h2>
+<details><summary>Claude не запускает скилл</summary><p>Проверьте шаг 1 (выполнение кода включено) и вызовите скилл явно: наберите «/» и выберите sumzee-profit-agent.</p></details>
+<details><summary>Не загружается ZIP</summary><p>Загружайте исходный .zip, не распакованную папку и не отдельные файлы.</p></details>
+<details><summary>Цифры выглядят неправильно</summary><p>Скажите Claude словами, что не так: «перевод на накопительный — это не расход», «сентябрь ещё не закончился», «зарплату я плачу себе отдельно, её нет в выписке». Он пересчитает.</p></details>
+<details><summary>Страница не открывается</summary><p>Скачайте HTML-файл из чата и откройте его в браузере двойным щелчком. Интернет для этого не нужен.</p></details>
+<details><summary>Хочу видеть это постоянно, а не разово</summary><p>Система, в которой цифры обновляются сами, — связка Airtable, автоматизаций и дашборда — это то, что Sumzee настраивает под ключ.</p></details>
+
+<div class="box cta" style="margin-top:40px"><b>Хотите видеть эти цифры каждый месяц без ручной работы?</b>
+<p style="color:var(--muted);margin:6px 0 0">Sumzee настраивает процессы, Airtable и единый дашборд для небольших компаний.</p>
+<a href="https://calendly.com/gpbalon/30min?utm_source=guide&utm_campaign=profit-agent" target="_blank" rel="noopener">Записаться на звонок</a></div>
+</div>
+
+<!-- ============ EN ============ -->
+<div data-l="en">
+<h1>Find out what your business actually makes — in 15 minutes with Claude</h1>
+<p class="lead">Attach your spreadsheets as they are, answer a couple of questions, and get a page: profit before and after you pay yourself, whether the business is healthy, and what to do first.</p>
+
+<h2>What you need</h2>
+<div class="need">
+<div class="box"><span class="icon">💬</span><b>A Claude account</b><span>the free plan works</span></div>
+<div class="box"><span class="icon">📊</span><b>Your financial files</b><span>Excel or CSV — whatever you have, messy is fine</span></div>
+<div class="box"><span class="icon">🧾</span><b>A couple of facts</b><span>how you pay yourself and your current bank balance — optional</span></div>
+<div class="box"><span class="icon">⏱️</span><b>10–15 minutes</b><span>per review</span></div>
+</div>
+
+<h2>Setup — 3 steps</h2>
+
+<div class="step"><div class="num">1</div><div>
+<h3>Let Claude work with files</h3>
+<p>Turn on code execution — skills don't work without it.</p>
+<div class="path"><span class="btn">Settings</span><span class="arrow">→</span><span class="btn">Capabilities</span><span class="arrow">→</span><span class="btn">Code execution</span><span class="arrow">→</span><span class="btn">on</span></div>
+<p style="font-size:14px;color:var(--muted)">On Team and Enterprise plans, an admin turns this on.</p>
+</div></div>
+
+<div class="step"><div class="num">2</div><div>
+<h3>Upload the skill</h3>
+<div class="path"><span class="btn">Customize</span><span class="arrow">→</span><span class="btn">Skills</span><span class="arrow">→</span><span class="btn">+</span><span class="arrow">→</span><span class="btn">Create skill</span><span class="arrow">→</span><span class="btn">Upload a skill</span></div>
+<p>Pick the file <b>sumzee-profit-agent.zip</b>.</p>
+<div class="note">Upload the <b>ZIP file</b> you downloaded, not the unzipped folder. If you're reading this, the archive has been unzipped — go back to the original .zip.</div>
+<p style="font-size:14px;color:var(--muted)">Updating? Remove the old version in the same Skills section first, then upload the new one.</p>
+</div></div>
+
+<div class="step"><div class="num">3</div><div>
+<h3>Start the conversation</h3>
+<p>Open a new chat, attach your files and write:</p>
+<div class="say">"How much are we actually making?"</div>
+<p>Claude picks up the skill on its own. Or type <span class="btn">/</span> in the message box and choose <b>sumzee-profit-agent</b>.</p>
+</div></div>
+
+<h2>Which files work</h2>
+<div class="files">
+<div class="box"><b>Bank export</b><span>the most common one; with a balance column it's even better — you get a reconciliation and cash runway</span></div>
+<div class="box"><b>Invoice or sales list</b><span>with clients, projects and payment status, if you have them</span></div>
+<div class="box"><b>Expense sheet</b><span>with or without categories — we'll sort it out</span></div>
+<div class="box"><b>Monthly P&amp;L</b><span>months in columns, line items in rows</span></div>
+<div class="box"><b>Timesheet</b><span>team hours by project or client — unlocks project margins</span></div>
+<div class="box"><b>"Total" rows, odd spellings, extra headers</b><span>leave them as they are — the skill handles them</span></div>
+</div>
+<div class="note">Data in Google Sheets: <b>File → Download → Microsoft Excel</b>. Airtable or accounting software: export to CSV or Excel. PDF invoices aren't supported yet.</div>
+
+<h2>What happens next</h2>
+<div class="flow">
+<div class="box"><b>A few questions</b><span>business model, how you pay yourself, team size — with answer options</span></div>
+<div class="box"><b>Claude reads the files</b><span>finds revenue, costs and what shouldn't count</span></div>
+<div class="box you"><b>1–3 clarifications</b><span>only when the answer changes the numbers: "is the savings transfer your own money?"</span><div class="tag">you answer</div></div>
+<div class="box"><b>Checks and maths</b><span>code does the arithmetic, not the model — numbers don't drift</span></div>
+<div class="box you"><b>Your results page</b><span>a dashboard file plus a short summary in chat</span><div class="tag">you review</div></div>
+<div class="box"><b>Follow-ups</b><span>"why was March weak?", "what if we raise prices?" — same chat</span></div>
+</div>
+
+<h2>What's on the page</h2>
+<div class="sees">
+<div class="box"><b>A verdict</b><span>healthy, needs attention or at risk — and why, in two sentences</span></div>
+<div class="box"><b>Profit before and after your pay</b><span>what the business earns and what's left once you've paid yourself</span></div>
+<div class="box"><b>What to do</b><span>2–3 actions with a calculated effect, e.g. "+$1,200 / month"</span></div>
+<div class="box"><b>Metrics for your model</b><span>projects, retainers, subscriptions and launches each get their own, with a norm</span></div>
+<div class="box"><b>What we checked and fixed</b><span>bank reconciliation, transfers, cancelled invoices, what's missing</span></div>
+<div class="box"><b>What else we could see</b><span>views your data almost supports — and exactly what they need</span></div>
+</div>
+
+<h2>About your data</h2>
+<div class="box"><ul class="ok">
+<li>Your files stay in your Claude. Sumzee never receives or sees them.</li>
+<li>The "Did we get it right?" survey sends only ratings and metric colours — no amounts, no client names. You see exactly what's sent before sending.</li>
+<li>The brief for Sumzee is sent only if you click the button yourself.</li>
+<li>Customer email addresses are masked on the page.</li>
+<li>This is a management view of your numbers, not accounting or tax reporting.</li>
+</ul></div>
+
+<h2>If something's off</h2>
+<details><summary>Claude doesn't start the skill</summary><p>Check step 1 (code execution is on) and call it directly: type "/" and choose sumzee-profit-agent.</p></details>
+<details><summary>The ZIP won't upload</summary><p>Upload the original .zip — not the unzipped folder or single files.</p></details>
+<details><summary>The numbers look wrong</summary><p>Tell Claude in plain words: "the savings transfer isn't a cost", "September isn't over yet", "I pay myself separately, it's not in this export". It will recalculate.</p></details>
+<details><summary>The page won't open</summary><p>Download the HTML file from the chat and double-click it to open in your browser. No internet needed.</p></details>
+<details><summary>I want to see this all the time, not once</summary><p>A system where the numbers update themselves — Airtable, automations and a dashboard — is what Sumzee sets up for you.</p></details>
+
+<div class="box cta" style="margin-top:40px"><b>Want these numbers every month without manual work?</b>
+<p style="color:var(--muted);margin:6px 0 0">Sumzee sets up processes, Airtable and one dashboard for small companies.</p>
+<a href="https://calendly.com/gpbalon/30min?utm_source=guide&utm_campaign=profit-agent" target="_blank" rel="noopener">Book a call</a></div>
+</div>
+
+<footer>Sumzee Profit Agent · v0.2 · sumzee.co</footer>
+</main>
+<script>
+(function(){var h=document.documentElement,bs=document.querySelectorAll('.lang button');
+function set(l){h.lang=l;bs.forEach(function(b){b.classList.toggle('on',b.dataset.set===l)});
+document.title=l==='ru'?'Sumzee Profit Agent — инструкция':'Sumzee Profit Agent — how to start';}
+bs.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})});
+if(!/^ru/i.test(navigator.language||'')&&location.hash!=='#ru')set('en');})();
+</script>
+</body></html>

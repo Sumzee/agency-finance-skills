@@ -1,0 +1,12 @@
+{
+  "name": "sumzee",
+  "owner": {"name": "Sumzee", "url": "https://www.sumzee.co"},
+  "description": "Free finance skills for agency and service-business owners, from Sumzee.",
+  "plugins": [
+    {
+      "name": "agency-finance",
+      "source": ".",
+      "description": "Profit Agent (what your agency really makes, and what to fix) + System Builder (your finance system, built in Airtable)."
+    }
+  ]
+}

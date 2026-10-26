@@ -1,0 +1,52 @@
+{
+  "id": "attendance",
+  "label": {"en": "Attendance and sessions", "ru": "Посещения и занятия"},
+  "requires": ["subscriptions"],
+  "when": {"en": "The business counts visits: packs of N sessions, or wants to see who attends without paying.", "ru": "Бизнес считает посещения: пакеты на N занятий, или нужно видеть, кто ходит без оплаты."},
+  "record_warning": {"en": "One record per member per session grows fast: 20 people × 2 sessions a week ≈ 2,000 records a year — above the free plan limit of 1,000 per base.", "ru": "Одна запись на участника на занятие растёт быстро: 20 человек × 2 занятия в неделю ≈ 2 000 записей в год — больше лимита бесплатного тарифа (1 000 на базу)."},
+  "tables": [
+    {
+      "name": "Classes",
+      "label": {"en": "Sessions", "ru": "Занятия"},
+      "group": "work",
+      "description": {"en": "One record = one session (a class, a rehearsal, a training).", "ru": "Одна запись = одно занятие (урок, репетиция, тренировка)."},
+      "entered_by": {"en": "Admin, from the schedule", "ru": "Администратор, по расписанию"},
+      "fields": [
+        {"name": "Class", "type": "singleLineText", "description": {"en": "e.g. 'Choir — 25 Aug'", "ru": "Например, «Хор — 25 авг»"}},
+        {"name": "Date", "type": "date", "required": true},
+        {"name": "Group", "type": "singleSelect", "choices": ["Main"]},
+        {"name": "Teacher", "type": "link", "to": "Team", "inverse": "Classes"},
+        {"name": "Attended", "type": "rollup", "via": "Attendance", "field": "Session counter", "formula": "SUM(values)", "description": {"en": "How many people came. Computed.", "ru": "Сколько человек пришло. Считается само."}}
+      ]
+    },
+    {
+      "name": "Attendance",
+      "label": {"en": "Attendance", "ru": "Посещения"},
+      "group": "work",
+      "description": {"en": "One record = one member at one session.", "ru": "Одна запись = один участник на одном занятии."},
+      "entered_by": {"en": "Teacher or admin, during or right after the session", "ru": "Преподаватель или администратор, на занятии или сразу после"},
+      "fields": [
+        {"name": "Entry", "type": "autoNumber"},
+        {"name": "Member", "type": "link", "to": "Clients", "inverse": "Attendance", "required": true},
+        {"name": "Class", "type": "link", "to": "Classes", "inverse": "Attendance", "required": true},
+        {"name": "Attended", "type": "checkbox"},
+        {"name": "Subscription", "type": "link", "to": "Subscriptions", "inverse": "Attendance", "description": {"en": "The pass this visit is charged to. Empty = not paid.", "ru": "Абонемент, с которого списывается занятие. Пусто — не оплачено."}},
+        {"name": "Session counter", "type": "formula", "formula": "IF({Attended}, 1, 0)", "description": {"en": "Technical field. Do not edit.", "ru": "Техническое поле. Не трогать."}},
+        {"name": "Pass type", "type": "rollup", "via": "Subscription", "field": "Plan type", "formula": "ARRAYJOIN(values)", "description": {"en": "Technical copy. Do not edit.", "ru": "Техническая копия. Не трогать."}},
+        {"name": "Pass sessions left", "type": "rollup", "via": "Subscription", "field": "Sessions left", "formula": "SUM(values)", "description": {"en": "Technical copy. Do not edit.", "ru": "Техническая копия. Не трогать."}},
+        {"name": "Pass valid until", "type": "rollup", "via": "Subscription", "field": "Valid until", "formula": "MAX(values)", "description": {"en": "Technical copy. Do not edit.", "ru": "Техническая копия. Не трогать."}},
+        {"name": "Payment status", "type": "formula", "formula": "IF(NOT({Subscription}), '🔴 Not paid', IF({Pass type} = 'Unlimited', '🟢 Unlimited until ' & DATETIME_FORMAT({Pass valid until}, 'DD.MM.YYYY'), IF({Pass type} = 'Pack', IF({Pass sessions left} > 0, '🟢 Paid, ' & {Pass sessions left} & ' left', '🔴 Pack used up'), '🟢 Paid')))", "description": {"en": "What the teacher sees: paid, how many left, or not paid. Computed.", "ru": "Что видит преподаватель: оплачено, сколько осталось или не оплачено. Считается само."}}
+      ]
+    }
+  ],
+  "extend": {
+    "Subscriptions": [
+      {"name": "Sessions used", "type": "rollup", "via": "Attendance", "field": "Session counter", "formula": "SUM(values)", "description": {"en": "Computed.", "ru": "Считается само."}},
+      {"name": "Sessions left", "type": "formula", "formula": "IF({Plan type} = 'Pack', {Plan sessions} - {Sessions used}, '')", "description": {"en": "Computed.", "ru": "Считается само."}}
+    ]
+  },
+  "questions": [
+    {"text": {"en": "Who comes without a paid pass", "ru": "Кто ходит без оплаченного абонемента"}, "tables": ["Attendance", "Subscriptions"]},
+    {"text": {"en": "Attendance by session and by month", "ru": "Посещаемость по занятиям и месяцам"}, "tables": ["Classes", "Attendance"]}
+  ]
+}

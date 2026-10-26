@@ -1,0 +1,27 @@
+{
+  "id": "bank_reconciliation",
+  "label": {"en": "Bank reconciliation", "ru": "Сверка с банком"},
+  "when": {"en": "Several accounts, or money often goes missing between invoices and the bank. Doubles the number of records.", "ru": "Много счетов или деньги «теряются» между счетами и банком. Удваивает число записей."},
+  "tables": [
+    {
+      "name": "Transactions",
+      "label": {"en": "Bank transactions", "ru": "Банковские операции"},
+      "group": "money",
+      "description": {"en": "One record = one line of a bank statement, imported monthly.", "ru": "Одна запись = одна строка банковской выписки, импорт раз в месяц."},
+      "entered_by": {"en": "Import of the bank statement", "ru": "Импорт выписки"},
+      "fields": [
+        {"name": "Transaction", "type": "singleLineText", "description": {"en": "Bank reference or a short description.", "ru": "Номер операции в банке или короткое описание."}},
+        {"name": "Date", "type": "date", "required": true},
+        {"name": "Amount", "type": "currency", "required": true, "description": {"en": "As in the statement: income positive, spending negative.", "ru": "Как в выписке: приход с плюсом, расход с минусом."}},
+        {"name": "Account", "type": "link", "to": "Accounts", "inverse": "Transactions", "required": true},
+        {"name": "Statement text", "type": "multilineText"},
+        {"name": "Payment", "type": "link", "to": "Payments", "inverse": "Transactions"},
+        {"name": "Expense", "type": "link", "to": "Expenses", "inverse": "Transactions"},
+        {"name": "Matched", "type": "formula", "formula": "IF(OR({Payment}, {Expense}), '✅', '⚠ not matched')", "description": {"en": "Every bank line should match a payment or an expense. Computed.", "ru": "Каждая строка выписки должна совпасть с оплатой или расходом. Считается само."}}
+      ]
+    }
+  ],
+  "questions": [
+    {"text": {"en": "Which bank operations are not reflected in the books", "ru": "Какие операции в банке не отражены в учёте"}, "tables": ["Transactions"]}
+  ]
+}

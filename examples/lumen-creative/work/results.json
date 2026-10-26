@@ -1,0 +1,1425 @@
+{
+ "meta": {
+  "generated_at": "2026-10-26T16:46:16",
+  "currency": "EUR",
+  "language": "en",
+  "business": {
+   "name": "Lumen Creative",
+   "type": "Marketing / creative agency",
+   "revenue_model": "Monthly retainers + client projects",
+   "team_size": "11-20",
+   "wants": "Why the bank balance keeps falling while we're profitable",
+   "data_location": "Invoicing tool + bank export + timesheet",
+   "owner_pay": {
+    "method": "draws",
+    "monthly_outside_data": 0
+   },
+   "hour_cost": 38,
+   "target_hourly_rate": 85
+  },
+  "period": {
+   "start": "2026-01",
+   "end": "2026-09",
+   "months": 9
+  },
+  "sources": [
+   {
+    "source": "invoices.xlsx / Invoices",
+    "role": "revenue",
+    "rows_read": 62,
+    "records_used": 62
+   },
+   {
+    "source": "bank_export.csv",
+    "role": "expenses",
+    "rows_read": 64,
+    "records_used": 64
+   },
+   {
+    "source": "timesheet.csv",
+    "role": "hours",
+    "rows_used": 738
+   }
+  ],
+  "partial_month_excluded": null
+ },
+ "kpis": {
+  "revenue": 766400.0,
+  "expenses": 610645.02,
+  "profit": 155754.98,
+  "margin_pct": 20.32,
+  "outstanding": 116900.0,
+  "overdue": 20400.0,
+  "cash_balance": 20442.66,
+  "cash_balance_date": "2026-09-28",
+  "avg_monthly_revenue": 85155.56,
+  "avg_monthly_profit": 17306.11,
+  "overdue_30d": 20400.0
+ },
+ "monthly": [
+  {
+   "month": "2026-01",
+   "revenue": 46000.0,
+   "expenses": 66528.92,
+   "profit": -20528.92,
+   "margin": -44.63
+  },
+  {
+   "month": "2026-02",
+   "revenue": 74000.0,
+   "expenses": 65783.53,
+   "profit": 8216.47,
+   "margin": 11.1
+  },
+  {
+   "month": "2026-03",
+   "revenue": 80500.0,
+   "expenses": 65298.26,
+   "profit": 15201.74,
+   "margin": 18.88
+  },
+  {
+   "month": "2026-04",
+   "revenue": 87500.0,
+   "expenses": 70055.98,
+   "profit": 17444.02,
+   "margin": 19.94
+  },
+  {
+   "month": "2026-05",
+   "revenue": 111000.0,
+   "expenses": 74708.39,
+   "profit": 36291.61,
+   "margin": 32.7
+  },
+  {
+   "month": "2026-06",
+   "revenue": 85000.0,
+   "expenses": 67850.89,
+   "profit": 17149.11,
+   "margin": 20.18
+  },
+  {
+   "month": "2026-07",
+   "revenue": 99500.0,
+   "expenses": 65129.0,
+   "profit": 34371.0,
+   "margin": 34.54
+  },
+  {
+   "month": "2026-08",
+   "revenue": 73400.0,
+   "expenses": 67043.01,
+   "profit": 6356.99,
+   "margin": 8.66
+  },
+  {
+   "month": "2026-09",
+   "revenue": 109500.0,
+   "expenses": 68247.04,
+   "profit": 41252.96,
+   "margin": 37.67
+  }
+ ],
+ "trends": {
+  "window_months": 3,
+  "last_window": [
+   "2026-07",
+   "2026-08",
+   "2026-09"
+  ],
+  "previous_window": [
+   "2026-04",
+   "2026-05",
+   "2026-06"
+  ],
+  "revenue_change_pct": -0.4,
+  "expenses_change_pct": -5.7,
+  "profit_change_pct": 15.7,
+  "margin_last_pct": 29.03,
+  "margin_previous_pct": 25.0,
+  "margin_change_pp": 4.03
+ },
+ "cost_breakdown": [
+  {
+   "name": "Salaries",
+   "amount": 414767.38,
+   "share_pct": 67.92,
+   "change_pct": 0.9,
+   "last_window_monthly": 46384.86,
+   "prev_window_monthly": 45991.25
+  },
+  {
+   "name": "Freelancers",
+   "amount": 95495.18,
+   "share_pct": 15.64,
+   "change_pct": -16.2,
+   "last_window_monthly": 10055.59,
+   "prev_window_monthly": 12002.05
+  },
+  {
+   "name": "Office",
+   "amount": 55800.0,
+   "share_pct": 9.14,
+   "change_pct": 0.0,
+   "last_window_monthly": 6200.0,
+   "prev_window_monthly": 6200.0
+  },
+  {
+   "name": "Software",
+   "amount": 18417.14,
+   "share_pct": 3.02,
+   "change_pct": 0.7,
+   "last_window_monthly": 2064.47,
+   "prev_window_monthly": 2049.67
+  },
+  {
+   "name": "Ad spend (rebilled)",
+   "amount": 10665.32,
+   "share_pct": 1.75,
+   "change_pct": -4.8,
+   "last_window_monthly": 1201.43,
+   "prev_window_monthly": 1262.12
+  },
+  {
+   "name": "Professional fees",
+   "amount": 8100.0,
+   "share_pct": 1.33,
+   "change_pct": 0.0,
+   "last_window_monthly": 900.0,
+   "prev_window_monthly": 900.0
+  },
+  {
+   "name": "Equipment",
+   "amount": 7400.0,
+   "share_pct": 1.21,
+   "change_pct": -100.0,
+   "last_window_monthly": 0.0,
+   "prev_window_monthly": 2466.67
+  }
+ ],
+ "cost_breakdown_by": "category",
+ "revenue_by_client": [
+  {
+   "name": "Marlow Bank",
+   "revenue": 130000.0,
+   "share_pct": 16.96
+  },
+  {
+   "name": "Halcyon Hotels",
+   "revenue": 121500.0,
+   "share_pct": 15.85
+  },
+  {
+   "name": "Verde Organics",
+   "revenue": 90000.0,
+   "share_pct": 11.74
+  },
+  {
+   "name": "Halden Retail",
+   "revenue": 89000.0,
+   "share_pct": 11.61
+  },
+  {
+   "name": "Opal Fitness",
+   "revenue": 78900.0,
+   "share_pct": 10.29
+  },
+  {
+   "name": "Northpoint Dental",
+   "revenue": 58500.0,
+   "share_pct": 7.63
+  },
+  {
+   "name": "Saffron Kitchens",
+   "revenue": 56000.0,
+   "share_pct": 7.31
+  },
+  {
+   "name": "Kestrel Logistics",
+   "revenue": 52500.0,
+   "share_pct": 6.85
+  },
+  {
+   "name": "Tidewater Energy",
+   "revenue": 36000.0,
+   "share_pct": 4.7
+  },
+  {
+   "name": "Brio Travel",
+   "revenue": 28000.0,
+   "share_pct": 3.65
+  },
+  {
+   "name": "Corvo Wines",
+   "revenue": 26000.0,
+   "share_pct": 3.39
+  }
+ ],
+ "revenue_by_project": [
+  {
+   "name": "Halcyon — retainer",
+   "revenue": 121500.0,
+   "share_pct": 15.85
+  },
+  {
+   "name": "Verde — retainer",
+   "revenue": 90000.0,
+   "share_pct": 11.74
+  },
+  {
+   "name": "Opal — retainer",
+   "revenue": 76500.0,
+   "share_pct": 9.98
+  },
+  {
+   "name": "Marlow — app launch campaign",
+   "revenue": 69000.0,
+   "share_pct": 9.0
+  },
+  {
+   "name": "Marlow — Q3 campaign",
+   "revenue": 61000.0,
+   "share_pct": 7.96
+  },
+  {
+   "name": "Northpoint — retainer",
+   "revenue": 58500.0,
+   "share_pct": 7.63
+  },
+  {
+   "name": "Halden — rebrand",
+   "revenue": 56000.0,
+   "share_pct": 7.31
+  },
+  {
+   "name": "Kestrel — retainer",
+   "revenue": 52500.0,
+   "share_pct": 6.85
+  },
+  {
+   "name": "Saffron — website",
+   "revenue": 42000.0,
+   "share_pct": 5.48
+  },
+  {
+   "name": "Tidewater — annual report",
+   "revenue": 36000.0,
+   "share_pct": 4.7
+  },
+  {
+   "name": "Halden — rebrand (phase 2)",
+   "revenue": 33000.0,
+   "share_pct": 4.31
+  },
+  {
+   "name": "Brio — summer campaign",
+   "revenue": 28000.0,
+   "share_pct": 3.65
+  }
+ ],
+ "revenue_by_stream": [
+  {
+   "name": "Retainer",
+   "revenue": 399000.0,
+   "share_pct": 52.06
+  },
+  {
+   "name": "project",
+   "revenue": 367400.0,
+   "share_pct": 47.94
+  }
+ ],
+ "concentration": {
+  "clients": 11,
+  "top1_name": "Marlow Bank",
+  "top1_share_pct": 16.96,
+  "top3_share_pct": 44.55
+ },
+ "project_profitability": [
+  {
+   "name": "Halcyon — retainer",
+   "client": "Halcyon Hotels",
+   "revenue": 121500.0,
+   "direct_costs": 0.0,
+   "team_costs": 50395.6,
+   "contribution": 71104.4,
+   "margin_pct": 58.52
+  },
+  {
+   "name": "Verde — retainer",
+   "client": "Verde Organics",
+   "revenue": 90000.0,
+   "direct_costs": 0.0,
+   "team_costs": 30791.4,
+   "contribution": 59208.6,
+   "margin_pct": 65.79
+  },
+  {
+   "name": "Opal — retainer",
+   "client": "Opal Fitness",
+   "revenue": 76500.0,
+   "direct_costs": 0.0,
+   "team_costs": 24757.0,
+   "contribution": 51743.0,
+   "margin_pct": 67.64
+  },
+  {
+   "name": "Marlow — app launch campaign",
+   "client": "Marlow Bank",
+   "revenue": 69000.0,
+   "direct_costs": 0.0,
+   "team_costs": 19756.2,
+   "contribution": 49243.8,
+   "margin_pct": 71.37
+  },
+  {
+   "name": "Marlow — Q3 campaign",
+   "client": "Marlow Bank",
+   "revenue": 61000.0,
+   "direct_costs": 0.0,
+   "team_costs": 17837.2,
+   "contribution": 43162.8,
+   "margin_pct": 70.76
+  },
+  {
+   "name": "Northpoint — retainer",
+   "client": "Northpoint Dental",
+   "revenue": 58500.0,
+   "direct_costs": 0.0,
+   "team_costs": 30666.0,
+   "contribution": 27834.0,
+   "margin_pct": 47.58
+  },
+  {
+   "name": "Halden — rebrand",
+   "client": "Halden Retail",
+   "revenue": 56000.0,
+   "direct_costs": 0.0,
+   "team_costs": 57000.0,
+   "contribution": -1000.0,
+   "margin_pct": -1.79
+  },
+  {
+   "name": "Kestrel — retainer",
+   "client": "Kestrel Logistics",
+   "revenue": 52500.0,
+   "direct_costs": 0.0,
+   "team_costs": 20466.8,
+   "contribution": 32033.2,
+   "margin_pct": 61.02
+  },
+  {
+   "name": "Saffron — website",
+   "client": "Saffron Kitchens",
+   "revenue": 42000.0,
+   "direct_costs": 0.0,
+   "team_costs": 13680.0,
+   "contribution": 28320.0,
+   "margin_pct": 67.43
+  },
+  {
+   "name": "Tidewater — annual report",
+   "client": "Tidewater Energy",
+   "revenue": 36000.0,
+   "direct_costs": 0.0,
+   "team_costs": 11400.0,
+   "contribution": 24600.0,
+   "margin_pct": 68.33
+  },
+  {
+   "name": "Halden — rebrand (phase 2)",
+   "client": "Halden Retail",
+   "revenue": 33000.0,
+   "direct_costs": 0.0,
+   "team_costs": 34200.0,
+   "contribution": -1200.0,
+   "margin_pct": -3.64
+  },
+  {
+   "name": "Brio — summer campaign",
+   "client": "Brio Travel",
+   "revenue": 28000.0,
+   "direct_costs": 0.0,
+   "team_costs": 8717.2,
+   "contribution": 19282.8,
+   "margin_pct": 68.87
+  },
+  {
+   "name": "Corvo — launch video",
+   "client": "Corvo Wines",
+   "revenue": 26000.0,
+   "direct_costs": 0.0,
+   "team_costs": 7980.0,
+   "contribution": 18020.0,
+   "margin_pct": 69.31
+  },
+  {
+   "name": "Saffron — menu shoot",
+   "client": "Saffron Kitchens",
+   "revenue": 14000.0,
+   "direct_costs": 0.0,
+   "team_costs": 4560.0,
+   "contribution": 9440.0,
+   "margin_pct": 67.43
+  },
+  {
+   "name": "Opal — event photos",
+   "client": "Opal Fitness",
+   "revenue": 2400.0,
+   "direct_costs": 0.0,
+   "team_costs": 0.0,
+   "contribution": 2400.0,
+   "margin_pct": 100.0
+  }
+ ],
+ "client_profitability": [
+  {
+   "name": "Marlow Bank",
+   "revenue": 130000.0,
+   "costs": 37593.4,
+   "contribution": 92406.6,
+   "revenue_share_pct": 16.96,
+   "contribution_share_pct": 21.28,
+   "margin_pct": 71.08
+  },
+  {
+   "name": "Halcyon Hotels",
+   "revenue": 121500.0,
+   "costs": 50395.6,
+   "contribution": 71104.4,
+   "revenue_share_pct": 15.85,
+   "contribution_share_pct": 16.38,
+   "margin_pct": 58.52
+  },
+  {
+   "name": "Verde Organics",
+   "revenue": 90000.0,
+   "costs": 30791.4,
+   "contribution": 59208.6,
+   "revenue_share_pct": 11.74,
+   "contribution_share_pct": 13.64,
+   "margin_pct": 65.79
+  },
+  {
+   "name": "Halden Retail",
+   "revenue": 89000.0,
+   "costs": 91200.0,
+   "contribution": -2200.0,
+   "revenue_share_pct": 11.61,
+   "contribution_share_pct": -0.51,
+   "margin_pct": -2.47
+  },
+  {
+   "name": "Opal Fitness",
+   "revenue": 78900.0,
+   "costs": 24757.0,
+   "contribution": 54143.0,
+   "revenue_share_pct": 10.29,
+   "contribution_share_pct": 12.47,
+   "margin_pct": 68.62
+  },
+  {
+   "name": "Northpoint Dental",
+   "revenue": 58500.0,
+   "costs": 30666.0,
+   "contribution": 27834.0,
+   "revenue_share_pct": 7.63,
+   "contribution_share_pct": 6.41,
+   "margin_pct": 47.58
+  },
+  {
+   "name": "Saffron Kitchens",
+   "revenue": 56000.0,
+   "costs": 18240.0,
+   "contribution": 37760.0,
+   "revenue_share_pct": 7.31,
+   "contribution_share_pct": 8.7,
+   "margin_pct": 67.43
+  },
+  {
+   "name": "Kestrel Logistics",
+   "revenue": 52500.0,
+   "costs": 20466.8,
+   "contribution": 32033.2,
+   "revenue_share_pct": 6.85,
+   "contribution_share_pct": 7.38,
+   "margin_pct": 61.02
+  },
+  {
+   "name": "Tidewater Energy",
+   "revenue": 36000.0,
+   "costs": 11400.0,
+   "contribution": 24600.0,
+   "revenue_share_pct": 4.7,
+   "contribution_share_pct": 5.67,
+   "margin_pct": 68.33
+  },
+  {
+   "name": "Brio Travel",
+   "revenue": 28000.0,
+   "costs": 8717.2,
+   "contribution": 19282.8,
+   "revenue_share_pct": 3.65,
+   "contribution_share_pct": 4.44,
+   "margin_pct": 68.87
+  },
+  {
+   "name": "Corvo Wines",
+   "revenue": 26000.0,
+   "costs": 7980.0,
+   "contribution": 18020.0,
+   "revenue_share_pct": 3.39,
+   "contribution_share_pct": 4.15,
+   "margin_pct": 69.31
+  }
+ ],
+ "hours": {
+  "total_hours": 10250.3,
+  "billable_hours": 8742.3,
+  "billable_share_pct": 85.29,
+  "people": 12,
+  "months": 9,
+  "by_person": [
+   {
+    "name": "Iris",
+    "hours": 991.4,
+    "billable_hours": 873.4
+   },
+   {
+    "name": "Dan",
+    "hours": 953.3,
+    "billable_hours": 831.3
+   },
+   {
+    "name": "Femi",
+    "hours": 904.0,
+    "billable_hours": 778.0
+   },
+   {
+    "name": "Chloe",
+    "hours": 901.4,
+    "billable_hours": 779.4
+   },
+   {
+    "name": "Kai",
+    "hours": 870.6,
+    "billable_hours": 744.6
+   },
+   {
+    "name": "Eli",
+    "hours": 865.2,
+    "billable_hours": 743.2
+   },
+   {
+    "name": "Ben",
+    "hours": 834.9,
+    "billable_hours": 712.9
+   },
+   {
+    "name": "Gia",
+    "hours": 831.4,
+    "billable_hours": 705.4
+   },
+   {
+    "name": "Lea",
+    "hours": 827.7,
+    "billable_hours": 697.7
+   },
+   {
+    "name": "Ana",
+    "hours": 808.5,
+    "billable_hours": 670.5
+   },
+   {
+    "name": "Jon",
+    "hours": 765.9,
+    "billable_hours": 635.9
+   },
+   {
+    "name": "Hugo",
+    "hours": 696.0,
+    "billable_hours": 570.0
+   }
+  ],
+  "by_project": [
+   {
+    "name": "Internal",
+    "hours": 1508.0
+   },
+   {
+    "name": "Halden — rebrand",
+    "hours": 1500.0
+   },
+   {
+    "name": "Halcyon — retainer",
+    "hours": 1326.2
+   },
+   {
+    "name": "Halden — rebrand (phase 2)",
+    "hours": 900.0
+   },
+   {
+    "name": "Verde — retainer",
+    "hours": 810.3
+   },
+   {
+    "name": "Northpoint — retainer",
+    "hours": 807.0
+   },
+   {
+    "name": "Opal — retainer",
+    "hours": 651.5
+   },
+   {
+    "name": "Kestrel — retainer",
+    "hours": 538.6
+   },
+   {
+    "name": "Marlow — app launch campaign",
+    "hours": 519.9
+   },
+   {
+    "name": "Marlow — Q3 campaign",
+    "hours": 469.4
+   },
+   {
+    "name": "Saffron — website",
+    "hours": 360.0
+   },
+   {
+    "name": "Tidewater — annual report",
+    "hours": 300.0
+   },
+   {
+    "name": "Brio — summer campaign",
+    "hours": 229.4
+   },
+   {
+    "name": "Corvo — launch video",
+    "hours": 210.0
+   },
+   {
+    "name": "Saffron — menu shoot",
+    "hours": 120.0
+   }
+  ],
+  "costed": true,
+  "labor_cost": 389511.4,
+  "effective_rate_by_project": [
+   {
+    "name": "Marlow — app launch campaign",
+    "revenue": 69000.0,
+    "hours": 519.9,
+    "revenue_per_hour": 132.72
+   },
+   {
+    "name": "Marlow — Q3 campaign",
+    "revenue": 61000.0,
+    "hours": 469.4,
+    "revenue_per_hour": 129.95
+   },
+   {
+    "name": "Corvo — launch video",
+    "revenue": 26000.0,
+    "hours": 210.0,
+    "revenue_per_hour": 123.81
+   },
+   {
+    "name": "Brio — summer campaign",
+    "revenue": 28000.0,
+    "hours": 229.4,
+    "revenue_per_hour": 122.06
+   },
+   {
+    "name": "Tidewater — annual report",
+    "revenue": 36000.0,
+    "hours": 300.0,
+    "revenue_per_hour": 120.0
+   },
+   {
+    "name": "Opal — retainer",
+    "revenue": 76500.0,
+    "hours": 651.5,
+    "revenue_per_hour": 117.42
+   },
+   {
+    "name": "Saffron — menu shoot",
+    "revenue": 14000.0,
+    "hours": 120.0,
+    "revenue_per_hour": 116.67
+   },
+   {
+    "name": "Saffron — website",
+    "revenue": 42000.0,
+    "hours": 360.0,
+    "revenue_per_hour": 116.67
+   },
+   {
+    "name": "Verde — retainer",
+    "revenue": 90000.0,
+    "hours": 810.3,
+    "revenue_per_hour": 111.07
+   },
+   {
+    "name": "Kestrel — retainer",
+    "revenue": 52500.0,
+    "hours": 538.6,
+    "revenue_per_hour": 97.47
+   },
+   {
+    "name": "Halcyon — retainer",
+    "revenue": 121500.0,
+    "hours": 1326.2,
+    "revenue_per_hour": 91.62
+   },
+   {
+    "name": "Northpoint — retainer",
+    "revenue": 58500.0,
+    "hours": 807.0,
+    "revenue_per_hour": 72.49
+   },
+   {
+    "name": "Halden — rebrand",
+    "revenue": 56000.0,
+    "hours": 1500.0,
+    "revenue_per_hour": 37.33
+   },
+   {
+    "name": "Halden — rebrand (phase 2)",
+    "revenue": 33000.0,
+    "hours": 900.0,
+    "revenue_per_hour": 36.67
+   }
+  ]
+ },
+ "recurring_expenses": [
+  {
+   "name": "Salaries",
+   "avg_monthly": 46085.26
+  },
+  {
+   "name": "Freelancers",
+   "avg_monthly": 10610.58
+  },
+  {
+   "name": "Office",
+   "avg_monthly": 6200.0
+  },
+  {
+   "name": "Software",
+   "avg_monthly": 2046.35
+  },
+  {
+   "name": "Ad spend (rebilled)",
+   "avg_monthly": 1185.04
+  },
+  {
+   "name": "Professional fees",
+   "avg_monthly": 900.0
+  }
+ ],
+ "availability": {
+  "revenue": true,
+  "expenses": true,
+  "dates": true,
+  "months": 9,
+  "revenue_clients": true,
+  "revenue_projects": true,
+  "revenue_streams": true,
+  "expense_categories": true,
+  "expense_vendors_only": false,
+  "expenses_linked_to_projects_pct": 0.0,
+  "project_costs": true,
+  "team_hours": true,
+  "team_hours_costed": true,
+  "team_capacity": false,
+  "invoice_status": true,
+  "due_dates": true,
+  "recurring_expenses": true,
+  "cash_balance": true
+ },
+ "excluded": [
+  {
+   "source": "invoices.xlsx / Invoices",
+   "reason": "Status is Cancelled",
+   "rows": 1,
+   "amount": 3200.0,
+   "owner": false
+  },
+  {
+   "source": "bank_export.csv",
+   "reason": "client payment — revenue is counted from invoices",
+   "rows": 52,
+   "amount": 649500.0,
+   "owner": false
+  },
+  {
+   "source": "bank_export.csv",
+   "reason": "owner's pay",
+   "rows": 9,
+   "amount": 72000.0,
+   "owner": true
+  },
+  {
+   "source": "bank_export.csv",
+   "reason": "transfer between own accounts",
+   "rows": 3,
+   "amount": 30000.0,
+   "owner": false
+  },
+  {
+   "source": "bank_export.csv",
+   "reason": "VAT passed through to the tax office",
+   "rows": 3,
+   "amount": 46412.32,
+   "owner": false
+  }
+ ],
+ "client_gaps": [
+  {
+   "client": "Kestrel Logistics",
+   "months_paid": 7,
+   "missing_months": [
+    "2026-04",
+    "2026-07"
+   ],
+   "typical_monthly": 7500.0
+  }
+ ],
+ "facts": [
+  {
+   "id": "trend",
+   "numbers": {
+    "window_months": 3,
+    "last_window": [
+     "2026-07",
+     "2026-08",
+     "2026-09"
+    ],
+    "previous_window": [
+     "2026-04",
+     "2026-05",
+     "2026-06"
+    ],
+    "revenue_change_pct": -0.4,
+    "expenses_change_pct": -5.7,
+    "profit_change_pct": 15.7,
+    "margin_last_pct": 29.03,
+    "margin_previous_pct": 25.0,
+    "margin_change_pp": 4.03
+   },
+   "text": "Last 3 months vs previous 3: revenue -0.4%, expenses -5.7%, profit +15.7%, margin 25.0% → 29.03%"
+  },
+  {
+   "id": "largest_cost",
+   "text": "Largest cost: 'Salaries' = 67.92% of expenses"
+  },
+  {
+   "id": "best_worst_month",
+   "text": "Best month 2026-09 (profit 41252.96), weakest 2026-01 (profit -20528.92)"
+  },
+  {
+   "id": "loss_months",
+   "severity": "warn",
+   "text": "Loss-making months: 2026-01"
+  },
+  {
+   "id": "outstanding",
+   "severity": "warn",
+   "text": "Unpaid invoices: 116900.0 (overdue: 20400.0) ≈ 1.4 months of average revenue"
+  },
+  {
+   "id": "project_margins",
+   "text": "Project contribution margin ranges from -3.64% (Halden — rebrand (phase 2)) to 100.0% (Opal — event photos) — before overheads"
+  },
+  {
+   "id": "loss_projects",
+   "severity": "warn",
+   "text": "Projects that cost more than they earned: Halden — rebrand, Halden — rebrand (phase 2)"
+  },
+  {
+   "id": "client_mismatch:Halden Retail",
+   "severity": "warn",
+   "text": "Halden Retail: 11.61% of revenue but only -0.51% of project contribution"
+  },
+  {
+   "id": "client_gap:Kestrel Logistics",
+   "severity": "warn",
+   "text": "Kestrel Logistics usually brings ~7500.0/month but nothing in 2026-04, 2026-07 — unpaid invoice or paused work?"
+  },
+  {
+   "id": "excluded",
+   "text": "Left out of expenses/revenue: Status is Cancelled = 3200.0; client payment — revenue is counted from invoices = 649500.0; owner's pay = 72000.0; transfer between own accounts = 30000.0; VAT passed through to the tax office = 46412.32"
+  },
+  {
+   "id": "unallocated",
+   "text": "Only 0.0% of expenses are linked to projects — project margins exclude salaries/overheads"
+  },
+  {
+   "id": "hours",
+   "text": "10250.3 hours logged, 85.29% billable"
+  },
+  {
+   "id": "effective_rate",
+   "text": "Revenue per hour: Marlow — app launch campaign 132.72 vs Halden — rebrand (phase 2) 36.67"
+  }
+ ],
+ "opportunities": {
+  "unlocked": [
+   "profit_and_margin",
+   "monthly_trends",
+   "cost_breakdown",
+   "revenue_by_client",
+   "project_profitability",
+   "client_profitability",
+   "effective_hourly_rate",
+   "revenue_by_service"
+  ],
+  "locked": [
+   {
+    "id": "cash_forecast",
+    "missing": [
+     "expected payment dates of open invoices"
+    ]
+   },
+   {
+    "id": "team_utilization",
+    "missing": [
+     "each person's available hours per month"
+    ]
+   },
+   {
+    "id": "pipeline_forecast",
+    "missing": [
+     "deal pipeline with expected value and close date (CRM)"
+    ]
+   }
+  ]
+ },
+ "data_notes": [
+  "invoices.xlsx / Invoices: ignored 1 total/subtotal row(s)",
+  "invoices.xlsx / Invoices: left out 1 rows where Status is Cancelled (total 3,200.00)",
+  "bank_export.csv: left out 52 rows containing PAYMENT FROM — client payment — revenue is counted from invoices (total 649,500.00)",
+  "bank_export.csv: left out 9 rows containing DIVIDEND — owner's pay (total 72,000.00)",
+  "bank_export.csv: left out 3 rows containing OWN SAVINGS — transfer between own accounts (total 30,000.00)",
+  "bank_export.csv: left out 3 rows containing VAT PAYMENT — VAT passed through to the tax office (total 46,412.32)",
+  "Revenue counts all issued invoices, including ones not paid yet"
+ ],
+ "sheet_totals": [
+  {
+   "source": "invoices.xlsx / Invoices",
+   "rows": 1,
+   "recomputed": 769600.0,
+   "sheet_total": 769600.0,
+   "difference": 0.0
+  }
+ ],
+ "reconciliation": [],
+ "model": {
+  "detected": "retainers",
+  "secondary": "projects",
+  "scores": {
+   "projects": 0.0,
+   "retainers": 2.0,
+   "subscriptions": 0.0,
+   "launches": 1.0
+  },
+  "signals": {
+   "recurring_clients": 5,
+   "recurring_share_pct": 52.37,
+   "clients": 11,
+   "avg_paying_clients_per_month": 6.67,
+   "spike_months": 0,
+   "spike_share_pct": 0.0,
+   "launch_words": true,
+   "subscription_words": false,
+   "project_column": true
+  },
+  "primary": "retainers"
+ },
+ "owner": {
+  "method": "draws",
+  "owner_pay_total": 72000.0,
+  "owner_draws_in_data": 72000.0,
+  "owner_pay_outside_data": 0.0,
+  "profit_after_owner": 83754.98,
+  "margin_after_owner_pct": 10.93,
+  "known": true
+ },
+ "metrics": [
+  {
+   "id": "margin_after_owner_pct",
+   "group": "core",
+   "value": 10.93,
+   "unit": "%",
+   "status": "yellow",
+   "critical": true,
+   "rule": {
+    "higher_is_better": true,
+    "good": 15,
+    "bad": 5
+   },
+   "missing": [],
+   "note": null,
+   "detail": null
+  },
+  {
+   "id": "cash_runway_months",
+   "group": "core",
+   "value": 0.27,
+   "unit": "months",
+   "status": "red",
+   "critical": true,
+   "rule": {
+    "higher_is_better": true,
+    "good": 3,
+    "bad": 1
+   },
+   "missing": [],
+   "note": null,
+   "detail": null
+  },
+  {
+   "id": "top_client_share_pct",
+   "group": "core",
+   "value": 16.96,
+   "unit": "%",
+   "status": "green",
+   "critical": false,
+   "rule": {
+    "higher_is_better": false,
+    "good": 25,
+    "bad": 40
+   },
+   "missing": [],
+   "note": null,
+   "detail": "Marlow Bank"
+  },
+  {
+   "id": "overdue_to_revenue",
+   "group": "core",
+   "value": 0.24,
+   "unit": "x",
+   "status": "green",
+   "critical": false,
+   "rule": {
+    "higher_is_better": false,
+    "good": 0.5,
+    "bad": 1.0
+   },
+   "missing": [],
+   "note": null,
+   "detail": null
+  },
+  {
+   "id": "team_cost_share_pct",
+   "group": "core",
+   "value": 66.58,
+   "unit": "%",
+   "status": "yellow",
+   "critical": false,
+   "rule": {
+    "higher_is_better": false,
+    "good": 55,
+    "bad": 70
+   },
+   "missing": [],
+   "note": null,
+   "detail": null
+  },
+  {
+   "id": "recurring_share_pct",
+   "group": "retainers",
+   "value": 52.37,
+   "unit": "%",
+   "status": "yellow",
+   "critical": false,
+   "rule": {
+    "higher_is_better": true,
+    "good": 60,
+    "bad": 40
+   },
+   "missing": [],
+   "note": null,
+   "detail": null
+  },
+  {
+   "id": "missed_payments",
+   "group": "retainers",
+   "value": 2.0,
+   "unit": "count",
+   "status": "yellow",
+   "critical": false,
+   "rule": {
+    "higher_is_better": false,
+    "good": 0,
+    "bad": 2
+   },
+   "missing": [],
+   "note": null,
+   "detail": [
+    "Kestrel Logistics"
+   ]
+  },
+  {
+   "id": "client_churn_12m_pct",
+   "group": "retainers",
+   "value": 0.0,
+   "unit": "%",
+   "status": "green",
+   "critical": false,
+   "rule": {
+    "higher_is_better": false,
+    "good": 15,
+    "bad": 30
+   },
+   "missing": [],
+   "note": "9 months of data",
+   "detail": null
+  },
+  {
+   "id": "overservice_pct",
+   "group": "retainers",
+   "value": 14.82,
+   "unit": "%",
+   "status": "yellow",
+   "critical": false,
+   "rule": {
+    "higher_is_better": false,
+    "good": 10,
+    "bad": 25
+   },
+   "missing": [],
+   "note": null,
+   "detail": null
+  },
+  {
+   "id": "effective_rate_vs_target_pct",
+   "group": "retainers",
+   "value": 103.14,
+   "unit": "%",
+   "status": "green",
+   "critical": false,
+   "rule": {
+    "higher_is_better": true,
+    "good": 100,
+    "bad": 80
+   },
+   "missing": [],
+   "note": null,
+   "detail": null
+  },
+  {
+   "id": "project_margin_pct",
+   "group": "projects",
+   "value": 56.65,
+   "unit": "%",
+   "status": "green",
+   "critical": false,
+   "rule": {
+    "higher_is_better": true,
+    "good": 40,
+    "bad": 25
+   },
+   "missing": [],
+   "note": null,
+   "detail": null
+  },
+  {
+   "id": "loss_projects_share_pct",
+   "group": "projects",
+   "value": 13.33,
+   "unit": "%",
+   "status": "yellow",
+   "critical": false,
+   "rule": {
+    "higher_is_better": false,
+    "good": 10,
+    "bad": 25
+   },
+   "missing": [],
+   "note": null,
+   "detail": null
+  },
+  {
+   "id": "utilization_pct",
+   "group": "projects",
+   "value": null,
+   "unit": "%",
+   "status": "locked",
+   "critical": false,
+   "rule": {
+    "good_range": [
+     70,
+     85
+    ],
+    "ok_range": [
+     60,
+     90
+    ]
+   },
+   "missing": [
+    "available hours per person per month"
+   ],
+   "note": null,
+   "detail": null
+  },
+  {
+   "id": "effective_rate_vs_target_pct",
+   "group": "projects",
+   "value": 102.81,
+   "unit": "%",
+   "status": "green",
+   "critical": false,
+   "rule": {
+    "higher_is_better": true,
+    "good": 100,
+    "bad": 80
+   },
+   "missing": [],
+   "note": null,
+   "detail": null
+  },
+  {
+   "id": "backlog_months",
+   "group": "projects",
+   "value": null,
+   "unit": "months",
+   "status": "locked",
+   "critical": false,
+   "rule": {
+    "higher_is_better": true,
+    "good": 2,
+    "bad": 1
+   },
+   "missing": [
+    "signed but not yet delivered work, with amounts"
+   ],
+   "note": null,
+   "detail": null
+  }
+ ],
+ "verdict": {
+  "verdict": "risk",
+  "confidence": "high",
+  "metrics_computed": 13,
+  "metrics_total": 15,
+  "red": [
+   "cash_runway_months"
+  ],
+  "yellow": [
+   "margin_after_owner_pct",
+   "team_cost_share_pct",
+   "recurring_share_pct",
+   "missed_payments",
+   "overservice_pct",
+   "loss_projects_share_pct"
+  ]
+ },
+ "checks": [
+  {
+   "id": "reconciliation",
+   "status": "not_possible"
+  },
+  {
+   "id": "owner_pay",
+   "status": "fixed",
+   "numbers": {
+    "method": "draws",
+    "owner_pay_total": 72000.0,
+    "in_data": 72000.0,
+    "outside_data": 0,
+    "profit_before": 155754.98,
+    "profit_after": 83754.98
+   }
+  },
+  {
+   "id": "non_expenses",
+   "status": "fixed",
+   "numbers": {
+    "items": [
+     {
+      "reason": "Status is Cancelled",
+      "amount": 3200.0,
+      "rows": 1
+     },
+     {
+      "reason": "client payment — revenue is counted from invoices",
+      "amount": 649500.0,
+      "rows": 52
+     },
+     {
+      "reason": "transfer between own accounts",
+      "amount": 30000.0,
+      "rows": 3
+     },
+     {
+      "reason": "VAT passed through to the tax office",
+      "amount": 46412.32,
+      "rows": 3
+     }
+    ]
+   }
+  },
+  {
+   "id": "missing_costs",
+   "status": "warn",
+   "numbers": {
+    "not_seen": [
+     "taxes",
+     "insurance"
+    ]
+   }
+  },
+  {
+   "id": "sheet_totals",
+   "status": "fixed",
+   "numbers": {
+    "items": [
+     {
+      "source": "invoices.xlsx / Invoices",
+      "rows": 1,
+      "recomputed": 769600.0,
+      "sheet_total": 769600.0,
+      "difference": 0.0
+     }
+    ],
+    "mismatch": false
+   }
+  },
+  {
+   "id": "sanity",
+   "status": "ok",
+   "numbers": {
+    "margin_pct": 20.32
+   }
+  }
+ ],
+ "actions": [
+  {
+   "id": "team_cost_to_norm",
+   "kind": "monthly",
+   "effect": 9861.01,
+   "what": "bring team costs from 66.58% to 55% of revenue (by prices or workload)"
+  },
+  {
+   "id": "collect_overdue",
+   "kind": "one_off",
+   "effect": 20400.0,
+   "what": "collect invoices unpaid for 30+ days"
+  },
+  {
+   "id": "chase_missed_retainers",
+   "kind": "one_off",
+   "effect": 15000.0,
+   "what": "check and chase missed retainer payments: Kestrel Logistics (2026-04, 2026-07)"
+  },
+  {
+   "id": "price_plus_5",
+   "kind": "monthly",
+   "effect": 4257.78,
+   "what": "scenario: +5% on prices with the same clients and workload"
+  }
+ ]
+}

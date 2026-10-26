@@ -1,0 +1,114 @@
+{
+  "id": "projects",
+  "label": {"en": "Projects", "ru": "Проекты"},
+  "status": "ready",
+  "based_on": "BEsmart Operations base, cleaned: no per-person fields, no hardcoded years, hour cost fixed at entry.",
+  "fits": {"en": "Agencies, consulting, training companies: each deal is a project with a contract, the team logs hours.", "ru": "Агентства, консалтинг, обучение: каждая сделка — проект с договором, команда отмечает часы."},
+  "tables": [
+    {
+      "name": "Projects",
+      "label": {"en": "Projects", "ru": "Проекты"},
+      "group": "sales",
+      "description": {"en": "One record = one project (one contract with a client).", "ru": "Одна запись = один проект (один договор с клиентом)."},
+      "entered_by": {"en": "Project manager, when the contract is signed", "ru": "Менеджер проекта, при подписании договора"},
+      "fields": [
+        {"name": "Project", "type": "singleLineText"},
+        {"name": "Client", "type": "link", "to": "Clients", "inverse": "Projects", "required": true, "description": {"en": "New client? Add it to Clients first, then pick it here.", "ru": "Новый клиент? Сначала добавьте его в «Клиенты», потом выберите здесь."}},
+        {"name": "Status", "type": "singleSelect", "choices": ["Lead", "Signed", "In progress", "Done", "Cancelled"]},
+        {"name": "Start date", "type": "date"},
+        {"name": "End date", "type": "date"},
+        {"name": "Contract value", "type": "currency", "required": true},
+        {"name": "Manager", "type": "link", "to": "Team", "inverse": "Managed projects"},
+        {"name": "Paid", "type": "rollup", "via": "Payments", "field": "Revenue amount", "formula": "SUM(values)", "description": {"en": "Money received for this project. Computed — do not edit.", "ru": "Сколько денег пришло по проекту. Считается само — не трогать."}},
+        {"name": "Outstanding", "type": "formula", "formula": "IF({Status} = 'Cancelled', 0, {Contract value} - {Paid})", "description": {"en": "How much the client still owes. Computed.", "ru": "Сколько клиент ещё должен. Считается само."}},
+        {"name": "Planned hours", "type": "rollup", "via": "Contract lines", "field": "Planned hours", "formula": "SUM(values)", "description": {"en": "Hours sold in the contract. Computed.", "ru": "Сколько часов продали по договору. Считается само."}},
+        {"name": "Actual hours", "type": "rollup", "via": "Hours", "field": "Hours", "formula": "SUM(values)", "description": {"en": "Hours the team actually logged. Computed.", "ru": "Сколько часов команда реально отработала. Считается само."}},
+        {"name": "Team cost", "type": "rollup", "via": "Hours", "field": "Cost", "formula": "SUM(values)", "description": {"en": "Logged hours × hour cost at the time of work. Computed.", "ru": "Часы × себестоимость часа на момент работы. Считается само."}},
+        {"name": "Direct costs", "type": "rollup", "via": "Expenses", "field": "Cost amount", "formula": "SUM(values)", "description": {"en": "Expenses tagged with this project (venue, travel, contractors). Computed.", "ru": "Расходы, привязанные к проекту (площадка, дорога, подрядчики). Считается само."}},
+        {"name": "Margin", "type": "formula", "formula": "{Contract value} - {Team cost} - {Direct costs}", "description": {"en": "Contract value minus team time and direct costs. Computed.", "ru": "Сумма договора минус время команды и прямые расходы. Считается само."}},
+        {"name": "Margin %", "type": "formula", "formula": "IF({Contract value}, ROUND({Margin} / {Contract value} * 100, 0), '')", "description": {"en": "Computed.", "ru": "Считается само."}},
+        {"name": "Hours overrun", "type": "formula", "formula": "IF({Planned hours}, {Actual hours} - {Planned hours}, '')", "description": {"en": "Positive = more hours spent than sold. Computed.", "ru": "Больше нуля — потратили часов больше, чем продали. Считается само."}}
+      ]
+    },
+    {
+      "name": "Contract lines",
+      "label": {"en": "Contract lines", "ru": "Позиции договора"},
+      "group": "sales",
+      "description": {"en": "What exactly is sold in a project: one line per service, with price and planned hours.", "ru": "Что именно продано в проекте: одна строка на услугу, с ценой и плановыми часами."},
+      "entered_by": {"en": "Project manager, together with the project", "ru": "Менеджер проекта, вместе с проектом"},
+      "fields": [
+        {"name": "Line", "type": "singleLineText"},
+        {"name": "Project", "type": "link", "to": "Projects", "inverse": "Contract lines", "required": true},
+        {"name": "Product", "type": "link", "to": "Products", "inverse": "Contract lines"},
+        {"name": "Price", "type": "currency"},
+        {"name": "Planned hours", "type": "number", "precision": 1},
+        {"name": "Sell rate", "type": "formula", "formula": "IF({Planned hours}, ROUND({Price} / {Planned hours}, 2), '')", "description": {"en": "Price per sold hour. Computed.", "ru": "Цена проданного часа. Считается само."}}
+      ]
+    },
+    {
+      "name": "Products",
+      "label": {"en": "Services", "ru": "Услуги"},
+      "group": "sales",
+      "description": {"en": "The list of services you sell.", "ru": "Список услуг, которые вы продаёте."},
+      "entered_by": {"en": "The owner, once", "ru": "Владелец, один раз"},
+      "fields": [
+        {"name": "Product", "type": "singleLineText"},
+        {"name": "Description", "type": "multilineText"},
+        {"name": "Times sold", "type": "count", "via": "Contract lines", "description": {"en": "Computed.", "ru": "Считается само."}},
+        {"name": "Revenue sold", "type": "rollup", "via": "Contract lines", "field": "Price", "formula": "SUM(values)", "description": {"en": "Computed.", "ru": "Считается само."}}
+      ]
+    },
+    {
+      "name": "Hours",
+      "label": {"en": "Hours", "ru": "Часы"},
+      "group": "work",
+      "description": {"en": "One record = one person's hours on one project on one day.", "ru": "Одна запись = часы одного человека по одному проекту за один день."},
+      "entered_by": {"en": "Each team member, through a form, weekly at least", "ru": "Каждый в команде, через форму, минимум раз в неделю"},
+      "fields": [
+        {"name": "Entry", "type": "autoNumber"},
+        {"name": "Date", "type": "date", "required": true, "description": {"en": "The day the work was done (not the day it was entered).", "ru": "День, когда работали (не день, когда внесли)."}},
+        {"name": "Person", "type": "link", "to": "Team", "inverse": "Hours", "required": true},
+        {"name": "Project", "type": "link", "to": "Projects", "inverse": "Hours", "required": true},
+        {"name": "Contract line", "type": "link", "to": "Contract lines", "inverse": "Hours"},
+        {"name": "Hours", "type": "number", "precision": 1, "required": true},
+        {"name": "Description", "type": "multilineText"},
+        {"name": "Hour cost", "type": "currency", "description": {"en": "Copied from Team when the entry is created, so later salary changes don't rewrite history. Do not edit.", "ru": "Копируется из «Команды» при создании записи, чтобы смена зарплаты не переписала историю. Не трогать."}},
+        {"name": "Cost", "type": "formula", "formula": "{Hours} * {Hour cost}", "description": {"en": "Computed.", "ru": "Считается само."}},
+        {"name": "Check", "type": "formula", "formula": "IF(NOT({Hour cost}), '⚠ no hour cost', '')", "description": {"en": "Warns if the hour cost wasn't copied — then the project margin is too optimistic.", "ru": "Предупреждает, если себестоимость часа не скопировалась — тогда маржа проекта завышена."}}
+      ]
+    }
+  ],
+  "extend": {
+    "Payments": [
+      {"name": "Project", "type": "link", "to": "Projects", "inverse": "Payments", "description": {"en": "Which project this payment is for.", "ru": "За какой проект эта оплата."}}
+    ],
+    "Expenses": [
+      {"name": "Project", "type": "link", "to": "Projects", "inverse": "Expenses", "description": {"en": "Only for costs of a specific project (venue, travel, contractor). Leave empty for general costs.", "ru": "Только для расходов конкретного проекта (площадка, дорога, подрядчик). Общие расходы — без проекта."}}
+    ],
+    "Team": [
+      {"name": "Monthly cost", "type": "currency", "description": {"en": "Salary or fee per month, with taxes the company pays. Ask the owner — never derive it.", "ru": "Зарплата или гонорар в месяц, с налогами компании. Спросить у владельца, не выводить из данных."}},
+      {"name": "Monthly hours", "type": "number", "precision": 0, "description": {"en": "Normal working hours per month for this person (e.g. 128 or 160).", "ru": "Норма часов в месяц для этого человека (например, 128 или 160)."}},
+      {"name": "Hour cost", "type": "formula", "formula": "IF({Monthly hours}, ROUND({Monthly cost} / {Monthly hours}, 2), 0)", "description": {"en": "Copied into Hours by an automation. Do not delete.", "ru": "Копируется в «Часы» автоматизацией. Не удалять."}}
+    ]
+  },
+  "automations": [
+    {
+      "id": "copy_hour_cost",
+      "label": {"en": "Fix hour cost when hours are logged", "ru": "Фиксировать себестоимость часа при вводе часов"},
+      "why": {"en": "Keeps project margins historically correct when salaries change.", "ru": "Чтобы маржа старых проектов не менялась, когда меняется зарплата."},
+      "trigger": "Hours: record created (or Person changed)",
+      "action": "Find the linked Team record → write its Hour cost into Hours.Hour cost"
+    }
+  ],
+  "questions": [
+    {"text": {"en": "Margin of every project — after team time and direct costs", "ru": "Маржа каждого проекта — после времени команды и прямых расходов"}, "tables": ["Projects", "Hours", "Expenses"]},
+    {"text": {"en": "Which projects took more hours than were sold", "ru": "На каких проектах потратили часов больше, чем продали"}, "tables": ["Projects", "Contract lines", "Hours"]},
+    {"text": {"en": "Workload of each person by week and project", "ru": "Загрузка каждого человека по неделям и проектам"}, "tables": ["Hours", "Team"]},
+    {"text": {"en": "Which services sell most and at what hourly rate", "ru": "Какие услуги продаются больше и по какой цене часа"}, "tables": ["Products", "Contract lines"]}
+  ],
+  "roles": {
+    "project": {"table": "Projects", "name": "Project", "value": "Contract value", "margin": "Margin"},
+    "hours": {"table": "Hours", "hours": "Hours", "cost": "Cost", "person": "Person", "project": "Project"}
+  },
+  "modules_suggested": ["budgets", "multicurrency"]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "launches",
+  "label": {"en": "Launches", "ru": "Запуски"},
+  "status": "draft",
+  "based_on": "Design principles; no reference base yet.",
+  "fits": {"en": "Online courses, events, product drops: revenue comes in waves around launches, marketing spend is tied to each launch.", "ru": "Онлайн-курсы, мероприятия, продажи волнами: выручка приходит вокруг запусков, реклама привязана к каждому запуску."},
+  "relabel": {
+    "Clients": {"label": {"en": "Buyers", "ru": "Покупатели"}, "description": {"en": "One record = one buyer. Optional: with many buyers, import sales without them to stay under the record limit.", "ru": "Одна запись = один покупатель. Необязательно: при большом числе покупателей продажи можно вносить без них, чтобы не упереться в лимит записей."}}
+  },
+  "tables": [
+    {
+      "name": "Launches",
+      "label": {"en": "Launches", "ru": "Запуски"},
+      "group": "sales",
+      "description": {"en": "One record = one launch (a cohort, an event, a sales wave).", "ru": "Одна запись = один запуск (поток, мероприятие, волна продаж)."},
+      "entered_by": {"en": "The owner or producer, when a launch is planned", "ru": "Владелец или продюсер, когда запуск планируется"},
+      "fields": [
+        {"name": "Launch", "type": "singleLineText"},
+        {"name": "Sales start", "type": "date"},
+        {"name": "Sales end", "type": "date"},
+        {"name": "Status", "type": "singleSelect", "choices": ["Planned", "Selling", "Delivering", "Done"]},
+        {"name": "Revenue target", "type": "currency"},
+        {"name": "Revenue", "type": "rollup", "via": "Payments", "field": "Revenue amount", "formula": "SUM(values)", "description": {"en": "Computed.", "ru": "Считается само."}},
+        {"name": "Sales count", "type": "rollup", "via": "Payments", "field": "Sale counter", "formula": "SUM(values)", "description": {"en": "Paid sales, refunds subtracted. Computed.", "ru": "Оплаченные продажи за вычетом возвратов. Считается само."}},
+        {"name": "Costs", "type": "rollup", "via": "Expenses", "field": "Cost amount", "formula": "SUM(values)", "description": {"en": "Ads, contractors, platform fees tagged with this launch. Computed.", "ru": "Реклама, подрядчики, комиссии платформ этого запуска. Считается само."}},
+        {"name": "Profit", "type": "formula", "formula": "{Revenue} - {Costs}", "description": {"en": "Computed.", "ru": "Считается само."}},
+        {"name": "Return on costs", "type": "formula", "formula": "IF({Costs}, ROUND({Revenue} / {Costs}, 2), '')", "description": {"en": "Revenue per 1 spent. Computed.", "ru": "Сколько выручки на 1 потраченный. Считается само."}},
+        {"name": "Target reached %", "type": "formula", "formula": "IF({Revenue target}, ROUND({Revenue} / {Revenue target} * 100, 0), '')", "description": {"en": "Computed.", "ru": "Считается само."}}
+      ]
+    },
+    {
+      "name": "Products",
+      "label": {"en": "Products", "ru": "Продукты"},
+      "group": "sales",
+      "description": {"en": "What is sold: course tiers, tickets, packages.", "ru": "Что продаётся: тарифы курса, билеты, пакеты."},
+      "entered_by": {"en": "The owner, before the launch", "ru": "Владелец, перед запуском"},
+      "fields": [
+        {"name": "Product", "type": "singleLineText"},
+        {"name": "Price", "type": "currency"},
+        {"name": "Revenue", "type": "rollup", "via": "Payments", "field": "Revenue amount", "formula": "SUM(values)", "description": {"en": "Computed.", "ru": "Считается само."}}
+      ]
+    }
+  ],
+  "extend": {
+    "Payments": [
+      {"name": "Launch", "type": "link", "to": "Launches", "inverse": "Payments"},
+      {"name": "Product", "type": "link", "to": "Products", "inverse": "Payments"},
+      {"name": "Platform", "type": "singleSelect", "choices": ["Website", "GetCourse", "Stripe", "Bank transfer", "Other"]},
+      {"name": "Sale counter", "type": "formula", "formula": "IF({Status} = 'Paid', IF({Kind} = 'Refund', -1, IF({Kind} = 'Client payment', 1, 0)), 0)", "description": {"en": "Technical field for counting sales. Do not edit.", "ru": "Техническое поле для подсчёта продаж. Не трогать."}}
+    ],
+    "Expenses": [
+      {"name": "Launch", "type": "link", "to": "Launches", "inverse": "Expenses", "description": {"en": "Tag ads, contractors and platform fees with the launch they serve.", "ru": "Привязывайте рекламу, подрядчиков и комиссии к запуску, на который они работают."}}
+    ]
+  },
+  "questions": [
+    {"text": {"en": "Profit of every launch after ads and contractors", "ru": "Прибыль каждого запуска после рекламы и подрядчиков"}, "tables": ["Launches", "Payments", "Expenses"]},
+    {"text": {"en": "How much revenue each unit of ad spend brings", "ru": "Сколько выручки приносит каждый вложенный в рекламу рубль/евро"}, "tables": ["Launches", "Expenses"]},
+    {"text": {"en": "Which product tiers sell best", "ru": "Какие тарифы покупают лучше"}, "tables": ["Products", "Payments"]},
+    {"text": {"en": "Refunds per launch", "ru": "Сколько возвратов на каждом запуске"}, "tables": ["Payments", "Launches"]}
+  ],
+  "roles": {
+    "project": {"table": "Launches", "name": "Launch", "value": "Revenue", "margin": "Profit"}
+  },
+  "modules_suggested": []
+}

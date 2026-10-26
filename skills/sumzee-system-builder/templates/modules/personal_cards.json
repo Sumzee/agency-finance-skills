@@ -1,0 +1,20 @@
+{
+  "id": "personal_cards",
+  "label": {"en": "Spending from personal cards", "ru": "Траты с личных карт"},
+  "when": {"en": "People pay business costs from their own cards or cash and get reimbursed.", "ru": "Сотрудники платят за бизнес со своих карт или наличными, а потом им возмещают."},
+  "extend": {
+    "Expenses": [
+      {"name": "Paid by", "type": "singleSelect", "choices": ["Company account", "Personal card", "Cash"]},
+      {"name": "Person", "type": "link", "to": "Team", "inverse": "Paid expenses", "description": {"en": "Who paid, if not from a company account.", "ru": "Кто заплатил, если не со счёта компании."}},
+      {"name": "Receipt", "type": "multipleAttachments"},
+      {"name": "Reimbursed", "type": "checkbox"},
+      {"name": "To reimburse", "type": "formula", "formula": "IF(AND({Paid by} != 'Company account', {Status} = 'Paid', NOT({Reimbursed})), {Amount}, 0)", "description": {"en": "Technical field. Do not edit.", "ru": "Техническое поле. Не трогать."}}
+    ],
+    "Team": [
+      {"name": "Owed to them", "type": "rollup", "via": "Paid expenses", "field": "To reimburse", "formula": "SUM(values)", "description": {"en": "How much the company owes this person. Computed.", "ru": "Сколько компания должна этому человеку. Считается само."}}
+    ]
+  },
+  "questions": [
+    {"text": {"en": "How much the company owes each person for their spending", "ru": "Сколько компания должна каждому за его траты"}, "tables": ["Expenses", "Team"]}
+  ]
+}

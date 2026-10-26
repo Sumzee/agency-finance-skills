@@ -1,0 +1,49 @@
+{
+ "_readme": "Sumzee thresholds. Edit numbers here — no code changes needed. 'good' = green if the value is on the good side of it, 'bad' = red if on the bad side; in between = yellow. 'higher_is_better' says which side is good. For a range metric (utilization), use 'good_range' and 'ok_range'.",
+
+ "core": {
+  "margin_after_owner_pct":  {"higher_is_better": true,  "good": 15,  "bad": 5,   "critical": true},
+  "cash_runway_months":      {"higher_is_better": true,  "good": 3,   "bad": 1,   "critical": true},
+  "top_client_share_pct":    {"higher_is_better": false, "good": 25,  "bad": 40},
+  "overdue_to_revenue":      {"higher_is_better": false, "good": 0.5, "bad": 1.0},
+  "team_cost_share_pct":     {"higher_is_better": false, "good": 55,  "bad": 70}
+ },
+ "projects": {
+  "project_margin_pct":      {"higher_is_better": true,  "good": 40,  "bad": 25},
+  "loss_projects_share_pct": {"higher_is_better": false, "good": 10,  "bad": 25},
+  "utilization_pct":         {"good_range": [70, 85], "ok_range": [60, 90]},
+  "effective_rate_vs_target_pct": {"higher_is_better": true, "good": 100, "bad": 80},
+  "backlog_months":          {"higher_is_better": true,  "good": 2,   "bad": 1}
+ },
+ "retainers": {
+  "recurring_share_pct":     {"higher_is_better": true,  "good": 60,  "bad": 40},
+  "missed_payments":         {"higher_is_better": false, "good": 0,   "bad": 2},
+  "client_churn_12m_pct":    {"higher_is_better": false, "good": 15,  "bad": 30},
+  "overservice_pct":         {"higher_is_better": false, "good": 10,  "bad": 25},
+  "effective_rate_vs_target_pct": {"higher_is_better": true, "good": 100, "bad": 80}
+ },
+ "subscriptions": {
+  "mrr_growth_pct":          {"higher_is_better": true,  "good": 3,   "bad": 0},
+  "monthly_churn_pct":       {"higher_is_better": false, "good": 3,   "bad": 6},
+  "revenue_retention_pct":   {"higher_is_better": true,  "good": 100, "bad": 90},
+  "customer_lifetime_months":{"higher_is_better": true,  "good": 24,  "bad": 12},
+  "payback_months":          {"higher_is_better": false, "good": 6,   "bad": 12}
+ },
+ "launches": {
+  "launch_margin_pct":       {"higher_is_better": true,  "good": 30,  "bad": 10},
+  "refund_share_pct":        {"higher_is_better": false, "good": 5,   "bad": 10},
+  "repeat_buyers_pct":       {"higher_is_better": true,  "good": 20,  "bad": 10},
+  "base_revenue_share_pct":  {"higher_is_better": true,  "good": 30,  "bad": 15},
+  "pause_coverage":          {"higher_is_better": true,  "good": 1.5, "bad": 1.0}
+ },
+
+ "verdict": {
+  "healthy":   "no red metrics and at most one yellow",
+  "attention": "two or more yellow, or one non-critical red",
+  "risk":      "any critical red, or two or more reds"
+ },
+ "model_detection": {
+  "primary_share_pct": 60
+ },
+ "sanity": {"margin_max_pct": 80, "margin_min_pct": -50}
+}

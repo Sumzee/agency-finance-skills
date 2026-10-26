@@ -1,0 +1,74 @@
+{
+  "id": "retainers",
+  "label": {"en": "Retainers", "ru": "Ретейнеры"},
+  "status": "draft",
+  "based_on": "Design principles; no reference base yet.",
+  "fits": {"en": "Agencies and freelancers paid a fixed monthly fee per client for a scope of work or hours.", "ru": "Агентства и фрилансеры, которым клиенты платят фиксированную сумму в месяц за объём работы или часов."},
+  "tables": [
+    {
+      "name": "Retainers",
+      "label": {"en": "Retainers", "ru": "Ретейнеры"},
+      "group": "sales",
+      "description": {"en": "One record = one retainer agreement with a client.", "ru": "Одна запись = один ретейнер-договор с клиентом."},
+      "entered_by": {"en": "Account manager, when the agreement starts or changes", "ru": "Аккаунт-менеджер, когда договор начинается или меняется"},
+      "fields": [
+        {"name": "Retainer", "type": "singleLineText"},
+        {"name": "Client", "type": "link", "to": "Clients", "inverse": "Retainers", "required": true},
+        {"name": "Monthly fee", "type": "currency", "required": true},
+        {"name": "Included hours", "type": "number", "precision": 1, "description": {"en": "Hours per month covered by the fee. Leave empty if the scope isn't hour-based.", "ru": "Сколько часов в месяц входит в сумму. Пусто, если объём не в часах."}},
+        {"name": "Start date", "type": "date", "required": true},
+        {"name": "End date", "type": "date", "description": {"en": "Empty while the retainer is running.", "ru": "Пусто, пока ретейнер действует."}},
+        {"name": "Status", "type": "singleSelect", "choices": ["Active", "Paused", "Ended"]},
+        {"name": "Paid total", "type": "rollup", "via": "Payments", "field": "Revenue amount", "formula": "SUM(values)", "description": {"en": "Computed.", "ru": "Считается само."}},
+        {"name": "Hours this month", "type": "rollup", "via": "Hours", "field": "This month hours", "formula": "SUM(values)", "description": {"en": "Computed.", "ru": "Считается само."}},
+        {"name": "Overrun this month", "type": "formula", "formula": "IF({Included hours}, {Hours this month} - {Included hours}, '')", "description": {"en": "Positive = working more than the client pays for. Computed.", "ru": "Больше нуля — работаете больше, чем платит клиент. Считается само."}},
+        {"name": "Team cost total", "type": "rollup", "via": "Hours", "field": "Cost", "formula": "SUM(values)", "description": {"en": "Computed.", "ru": "Считается само."}},
+        {"name": "Margin total", "type": "formula", "formula": "{Paid total} - {Team cost total}", "description": {"en": "All money received minus all team time. Computed.", "ru": "Все полученные деньги минус всё время команды. Считается само."}},
+        {"name": "Effective hourly rate", "type": "formula", "formula": "IF({Included hours}, ROUND({Monthly fee} / MAX({Hours this month}, {Included hours}), 2), '')", "description": {"en": "What an hour really earns this month, overrun included. Computed.", "ru": "Сколько реально приносит час в этом месяце с учётом переработки. Считается само."}}
+      ]
+    },
+    {
+      "name": "Hours",
+      "label": {"en": "Hours", "ru": "Часы"},
+      "group": "work",
+      "description": {"en": "One record = one person's hours on one retainer on one day.", "ru": "Одна запись = часы одного человека по одному ретейнеру за один день."},
+      "entered_by": {"en": "Each team member, through a form", "ru": "Каждый в команде, через форму"},
+      "fields": [
+        {"name": "Entry", "type": "autoNumber"},
+        {"name": "Date", "type": "date", "required": true},
+        {"name": "Person", "type": "link", "to": "Team", "inverse": "Hours", "required": true},
+        {"name": "Retainer", "type": "link", "to": "Retainers", "inverse": "Hours", "required": true},
+        {"name": "Hours", "type": "number", "precision": 1, "required": true},
+        {"name": "Description", "type": "multilineText"},
+        {"name": "Hour cost", "type": "currency", "description": {"en": "Copied from Team when the entry is created. Do not edit.", "ru": "Копируется из «Команды» при создании записи. Не трогать."}},
+        {"name": "Cost", "type": "formula", "formula": "{Hours} * {Hour cost}", "description": {"en": "Computed.", "ru": "Считается само."}},
+        {"name": "This month hours", "type": "formula", "formula": "IF(DATETIME_FORMAT({Date}, 'YYYY-MM') = DATETIME_FORMAT(TODAY(), 'YYYY-MM'), {Hours}, 0)", "description": {"en": "Technical field for the monthly overrun. Do not edit.", "ru": "Техническое поле для подсчёта переработки за месяц. Не трогать."}}
+      ]
+    }
+  ],
+  "extend": {
+    "Payments": [
+      {"name": "Retainer", "type": "link", "to": "Retainers", "inverse": "Payments"},
+      {"name": "Period", "type": "singleLineText", "description": {"en": "Which month the payment covers, as YYYY-MM. Lets you see a missed month.", "ru": "За какой месяц оплата, в виде ГГГГ-ММ. Чтобы видеть пропущенный месяц."}}
+    ],
+    "Team": [
+      {"name": "Monthly cost", "type": "currency", "description": {"en": "Salary or fee per month, with company taxes. Ask the owner.", "ru": "Зарплата или гонорар в месяц, с налогами компании. Спросить у владельца."}},
+      {"name": "Monthly hours", "type": "number", "precision": 0},
+      {"name": "Hour cost", "type": "formula", "formula": "IF({Monthly hours}, ROUND({Monthly cost} / {Monthly hours}, 2), 0)", "description": {"en": "Copied into Hours by an automation. Do not delete.", "ru": "Копируется в «Часы» автоматизацией. Не удалять."}}
+    ]
+  },
+  "automations": [
+    {"id": "copy_hour_cost", "label": {"en": "Fix hour cost when hours are logged", "ru": "Фиксировать себестоимость часа при вводе часов"}, "why": {"en": "Keeps margins historically correct when salaries change.", "ru": "Чтобы маржа прошлых месяцев не менялась при смене зарплаты."}, "trigger": "Hours: record created", "action": "Copy Team.Hour cost into Hours.Hour cost"}
+  ],
+  "questions": [
+    {"text": {"en": "Which clients we over-serve: hours worked vs hours paid", "ru": "Каким клиентам мы делаем больше, чем они платят"}, "tables": ["Retainers", "Hours"]},
+    {"text": {"en": "Real hourly rate per client", "ru": "Реальная цена часа по каждому клиенту"}, "tables": ["Retainers", "Hours"]},
+    {"text": {"en": "Monthly recurring revenue from retainers", "ru": "Сколько ретейнеры приносят каждый месяц"}, "tables": ["Retainers", "Payments"]},
+    {"text": {"en": "Who missed a monthly payment", "ru": "Кто пропустил ежемесячную оплату"}, "tables": ["Payments", "Retainers"]}
+  ],
+  "roles": {
+    "project": {"table": "Retainers", "name": "Retainer", "value": "Monthly fee", "margin": "Margin total"},
+    "hours": {"table": "Hours", "hours": "Hours", "cost": "Cost", "person": "Person", "project": "Retainer"}
+  },
+  "modules_suggested": []
+}

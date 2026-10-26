@@ -1,0 +1,19 @@
+{
+  "id": "budgets",
+  "label": {"en": "Budgets by category", "ru": "Бюджеты по статьям"},
+  "when": {"en": "The owner plans spending by category and wants to see budget vs actual.", "ru": "Владелец планирует траты по статьям и хочет видеть план против факта."},
+  "extend": {
+    "Expenses": [
+      {"name": "This year cost", "type": "formula", "formula": "IF(YEAR({Date}) = YEAR(TODAY()), {Cost amount}, 0)", "description": {"en": "Technical field: the current year is computed, never typed. Do not edit.", "ru": "Техническое поле: текущий год считается сам, а не вписан руками. Не трогать."}}
+    ],
+    "Categories": [
+      {"name": "Annual budget", "type": "currency", "description": {"en": "Budget for the current year. Update it in January — formulas don't need changes.", "ru": "Бюджет на текущий год. В январе обновить сумму — формулы менять не нужно."}},
+      {"name": "Spent this year", "type": "rollup", "via": "Expenses", "field": "This year cost", "formula": "SUM(values)", "description": {"en": "Computed.", "ru": "Считается само."}},
+      {"name": "Left this year", "type": "formula", "formula": "IF({Annual budget}, {Annual budget} - {Spent this year}, '')", "description": {"en": "Computed.", "ru": "Считается само."}},
+      {"name": "Budget used %", "type": "formula", "formula": "IF({Annual budget}, ROUND({Spent this year} / {Annual budget} * 100, 0), '')", "description": {"en": "Computed.", "ru": "Считается само."}}
+    ]
+  },
+  "questions": [
+    {"text": {"en": "Budget vs actual for every category this year", "ru": "План и факт по каждой статье расходов в этом году"}, "tables": ["Categories", "Expenses"]}
+  ]
+}

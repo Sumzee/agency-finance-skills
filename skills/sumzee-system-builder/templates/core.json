@@ -1,0 +1,129 @@
+{
+  "id": "core",
+  "comment": "Financial core shared by every model. Money in, money out, where it sits, who the clients and the team are.",
+  "groups": [
+    {"id": "sales", "label": {"en": "Sales", "ru": "Продажи"}},
+    {"id": "work", "label": {"en": "Work", "ru": "Работа"}},
+    {"id": "money", "label": {"en": "Money", "ru": "Деньги"}},
+    {"id": "costs", "label": {"en": "Costs", "ru": "Расходы"}}
+  ],
+  "tables": [
+    {
+      "name": "Clients",
+      "label": {"en": "Clients", "ru": "Клиенты"},
+      "group": "sales",
+      "description": {"en": "One record = one client (a company or a person who pays).", "ru": "Одна запись = один клиент (компания или человек, который платит)."},
+      "entered_by": {"en": "Sales or the owner, when a new client appears", "ru": "Продажи или владелец, когда появляется новый клиент"},
+      "fields": [
+        {"name": "Client", "type": "singleLineText", "description": {"en": "Client name, as you call them internally.", "ru": "Название клиента — так, как вы его называете внутри."}},
+        {"name": "Contact person", "type": "singleLineText"},
+        {"name": "Email", "type": "email"},
+        {"name": "Messenger", "type": "singleLineText", "description": {"en": "Telegram / WhatsApp handle.", "ru": "Telegram или WhatsApp."}},
+        {"name": "Source", "type": "singleSelect", "choices": ["Referral", "Website", "LinkedIn", "Repeat", "Other"], "description": {"en": "Where the client came from.", "ru": "Откуда пришёл клиент."}},
+        {"name": "Notes", "type": "multilineText"},
+        {"name": "Total paid", "type": "rollup", "via": "Payments", "field": "Revenue amount", "formula": "SUM(values)", "description": {"en": "All money received from this client, refunds subtracted. Computed — do not edit.", "ru": "Все деньги от клиента за вычетом возвратов. Считается само — не трогать."}}
+      ]
+    },
+    {
+      "name": "Payments",
+      "label": {"en": "Payments", "ru": "Оплаты"},
+      "group": "money",
+      "description": {"en": "One record = one incoming payment (or an expected one). Refunds are entered here too, with Kind = Refund.", "ru": "Одна запись = одна входящая оплата (или ожидаемая). Возвраты тоже здесь, с видом «Refund»."},
+      "entered_by": {"en": "Whoever issues invoices; status changes to Paid when the money arrives", "ru": "Тот, кто выставляет счета; статус меняется на Paid, когда деньги пришли"},
+      "fields": [
+        {"name": "Payment", "type": "autoNumber", "description": {"en": "Assigned automatically.", "ru": "Присваивается автоматически."}},
+        {"name": "Client", "type": "link", "to": "Clients", "inverse": "Payments", "required": true},
+        {"name": "Amount", "type": "currency", "required": true, "description": {"en": "Positive number, even for refunds — the Kind field decides the sign.", "ru": "Всегда положительное число, даже для возврата — знак определяет поле Kind."}},
+        {"name": "Kind", "type": "singleSelect", "choices": ["Client payment", "Refund", "Other income", "Internal transfer"], "required": true, "description": {"en": "Internal transfer = money moved between your own accounts. It is not revenue.", "ru": "Internal transfer — перевод между своими счетами. Это не выручка."}},
+        {"name": "Status", "type": "singleSelect", "choices": ["Expected", "Invoiced", "Paid", "Cancelled"], "required": true},
+        {"name": "Expected date", "type": "date"},
+        {"name": "Payment date", "type": "date", "required": true, "description": {"en": "The day the money arrived. Without it the payment falls out of every month.", "ru": "День, когда деньги пришли. Без даты оплата не попадёт ни в один месяц."}},
+        {"name": "Invoice number", "type": "singleLineText"},
+        {"name": "Account", "type": "link", "to": "Accounts", "inverse": "Payments", "description": {"en": "Where the money landed.", "ru": "Куда пришли деньги."}},
+        {"name": "Comment", "type": "multilineText"},
+        {"name": "Month", "type": "formula", "formula": "IF({Payment date}, DATETIME_FORMAT({Payment date}, 'YYYY-MM'), '')", "description": {"en": "Month of payment, for reports. Computed.", "ru": "Месяц оплаты для отчётов. Считается само."}},
+        {"name": "Revenue amount", "type": "formula", "formula": "IF(AND({Status} = 'Paid', {Kind} != 'Internal transfer'), IF({Kind} = 'Refund', -{Amount}, {Amount}), 0)", "description": {"en": "What counts as revenue: paid, not a transfer, refunds negative. Computed — do not edit.", "ru": "Что идёт в выручку: оплачено, не перевод, возвраты с минусом. Считается само — не трогать."}},
+        {"name": "Cash in", "type": "formula", "formula": "IF({Status} = 'Paid', IF({Kind} = 'Refund', -{Amount}, {Amount}), 0)", "description": {"en": "Effect on the account balance (transfers included). Computed.", "ru": "Влияние на остаток счёта (переводы тоже). Считается само."}},
+        {"name": "Check", "type": "formula", "formula": "IF(AND({Status} = 'Paid', NOT({Payment date})), '⚠ no payment date', IF(AND({Status} = 'Paid', NOT({Account})), '⚠ no account', ''))", "description": {"en": "Shows a warning when something important is missing.", "ru": "Показывает предупреждение, если чего-то важного не хватает."}}
+      ]
+    },
+    {
+      "name": "Expenses",
+      "label": {"en": "Expenses", "ru": "Расходы"},
+      "group": "costs",
+      "description": {"en": "One record = one outgoing payment. Owner draws and transfers between own accounts are entered too, with their own Kind.", "ru": "Одна запись = одна трата. Выплаты владельцу и переводы между своими счетами тоже здесь, со своим видом."},
+      "entered_by": {"en": "Whoever pays; or imported from the bank statement once a month", "ru": "Тот, кто платит; или импорт выписки раз в месяц"},
+      "fields": [
+        {"name": "Expense", "type": "singleLineText", "description": {"en": "What was paid for, in a few words.", "ru": "За что заплатили, в двух словах."}},
+        {"name": "Date", "type": "date", "required": true},
+        {"name": "Amount", "type": "currency", "required": true},
+        {"name": "Category", "type": "link", "to": "Categories", "inverse": "Expenses", "required": true},
+        {"name": "Kind", "type": "singleSelect", "choices": ["Expense", "Owner draw", "Internal transfer", "Tax"], "required": true, "description": {"en": "Owner draw and Internal transfer are not costs of the business — reports exclude them.", "ru": "Owner draw и Internal transfer — не расходы бизнеса, отчёты их исключают."}},
+        {"name": "Status", "type": "singleSelect", "choices": ["Planned", "Paid", "Cancelled"], "required": true},
+        {"name": "Account", "type": "link", "to": "Accounts", "inverse": "Expenses", "description": {"en": "Which account the money left.", "ru": "С какого счёта ушли деньги."}},
+        {"name": "Vendor", "type": "singleLineText"},
+        {"name": "Comment", "type": "multilineText"},
+        {"name": "Month", "type": "formula", "formula": "IF({Date}, DATETIME_FORMAT({Date}, 'YYYY-MM'), '')", "description": {"en": "Computed.", "ru": "Считается само."}},
+        {"name": "Cost amount", "type": "formula", "formula": "IF(AND({Status} = 'Paid', OR({Kind} = 'Expense', {Kind} = 'Tax')), {Amount}, 0)", "description": {"en": "What counts as a business cost. Computed — do not edit.", "ru": "Что считается расходом бизнеса. Считается само — не трогать."}},
+        {"name": "Cash out", "type": "formula", "formula": "IF({Status} = 'Paid', {Amount}, 0)", "description": {"en": "Effect on the account balance. Computed.", "ru": "Влияние на остаток счёта. Считается само."}},
+        {"name": "Check", "type": "formula", "formula": "IF(NOT({Date}), '⚠ no date', IF(NOT({Category}), '⚠ no category', ''))", "description": {"en": "Shows a warning when something important is missing.", "ru": "Показывает предупреждение, если чего-то важного не хватает."}}
+      ]
+    },
+    {
+      "name": "Categories",
+      "label": {"en": "Expense categories", "ru": "Статьи расходов"},
+      "group": "costs",
+      "description": {"en": "The list of expense categories. Add a category here, never as a new column.", "ru": "Список статей расходов. Новая статья — новая строка здесь, а не новая колонка."},
+      "entered_by": {"en": "The owner, once; rarely changes", "ru": "Владелец, один раз; меняется редко"},
+      "fields": [
+        {"name": "Category", "type": "singleLineText"},
+        {"name": "Description", "type": "multilineText", "description": {"en": "What goes into this category — helps people choose correctly.", "ru": "Что сюда относится — чтобы люди выбирали правильно."}},
+        {"name": "Spent total", "type": "rollup", "via": "Expenses", "field": "Cost amount", "formula": "SUM(values)", "description": {"en": "Computed.", "ru": "Считается само."}}
+      ]
+    },
+    {
+      "name": "Accounts",
+      "label": {"en": "Accounts", "ru": "Счета"},
+      "group": "money",
+      "description": {"en": "Bank accounts, cards and cash — every place money sits, including personal cards used for the business.", "ru": "Банковские счета, карты и наличные — все места, где лежат деньги, включая личные карты, через которые идут деньги бизнеса."},
+      "entered_by": {"en": "The owner, once", "ru": "Владелец, один раз"},
+      "fields": [
+        {"name": "Account", "type": "singleLineText"},
+        {"name": "Holder", "type": "singleLineText", "description": {"en": "Company or the person who holds it (for personal cards and cash).", "ru": "Компания или человек, у которого он на руках (для личных карт и наличных)."}},
+        {"name": "Bank", "type": "singleLineText"},
+        {"name": "Opening balance", "type": "currency", "description": {"en": "Balance on the day the base starts being used.", "ru": "Остаток на день, с которого начали вести базу."}},
+        {"name": "In", "type": "rollup", "via": "Payments", "field": "Cash in", "formula": "SUM(values)", "description": {"en": "Computed.", "ru": "Считается само."}},
+        {"name": "Out", "type": "rollup", "via": "Expenses", "field": "Cash out", "formula": "SUM(values)", "description": {"en": "Computed.", "ru": "Считается само."}},
+        {"name": "Balance", "type": "formula", "formula": "{Opening balance} + {In} - {Out}", "description": {"en": "Should match the bank. If not — something is missing or entered twice.", "ru": "Должен совпадать с банком. Если нет — что-то не внесено или внесено дважды."}}
+      ]
+    },
+    {
+      "name": "Team",
+      "label": {"en": "Team", "ru": "Команда"},
+      "group": "work",
+      "description": {"en": "Employees and contractors.", "ru": "Сотрудники и подрядчики."},
+      "entered_by": {"en": "The owner, when someone joins", "ru": "Владелец, когда кто-то приходит"},
+      "fields": [
+        {"name": "Name", "type": "singleLineText"},
+        {"name": "Role", "type": "singleLineText"},
+        {"name": "Type", "type": "singleSelect", "choices": ["Employee", "Contractor", "Owner"]},
+        {"name": "Active", "type": "checkbox"}
+      ]
+    }
+  ],
+  "questions": [
+    {"text": {"en": "How much we actually earned each month — revenue, costs, profit", "ru": "Сколько реально заработали за каждый месяц — выручка, расходы, прибыль"}, "tables": ["Payments", "Expenses"]},
+    {"text": {"en": "Where the money goes, by category", "ru": "Куда уходят деньги — по статьям"}, "tables": ["Expenses", "Categories"]},
+    {"text": {"en": "How much is on each account right now", "ru": "Сколько денег сейчас на каждом счёте"}, "tables": ["Accounts", "Payments", "Expenses"]},
+    {"text": {"en": "Who owes us and how much", "ru": "Кто и сколько нам должен"}, "tables": ["Payments", "Clients"]}
+  ],
+  "roles": {
+    "revenue": {"table": "Payments", "amount": "Revenue amount", "date": "Payment date", "status": "Status", "paid_values": ["Paid"]},
+    "expenses": {"table": "Expenses", "amount": "Cost amount", "date": "Date", "category": "Category"},
+    "client": {"table": "Clients", "name": "Client"},
+    "exclude": [
+      {"table": "Payments", "field": "Kind", "values": ["Internal transfer"]},
+      {"table": "Expenses", "field": "Kind", "values": ["Internal transfer", "Owner draw"]}
+    ]
+  }
+}

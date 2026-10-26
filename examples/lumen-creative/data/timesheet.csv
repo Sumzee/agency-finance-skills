@@ -1,0 +1,739 @@
+date,person,client,project,hours
+2026-01-01,Hugo,Halcyon Hotels,Halcyon — retainer,12
+2026-01-02,Dan,Opal Fitness,Opal — retainer,24
+2026-01-03,Chloe,Verde Organics,Verde — retainer,16
+2026-01-04,Hugo,Halcyon Hotels,Halcyon — retainer,8.3
+2026-01-04,Femi,Opal Fitness,Opal — retainer,12
+2026-01-04,Ana,Opal Fitness,Opal — retainer,8
+2026-01-05,Ben,Halcyon Hotels,Halcyon — retainer,12
+2026-01-05,Dan,Halcyon Hotels,Halcyon — retainer,12
+2026-01-05,Gia,Halcyon Hotels,Halcyon — retainer,8
+2026-01-05,Lea,Halcyon Hotels,Halcyon — retainer,16
+2026-01-05,Kai,Northpoint Dental,Northpoint — retainer,24
+2026-01-07,Hugo,Opal Fitness,Opal — retainer,8
+2026-01-09,Eli,Halcyon Hotels,Halcyon — retainer,12
+2026-01-12,Jon,Northpoint Dental,Northpoint — retainer,16
+2026-01-12,Dan,Kestrel Logistics,Kestrel — retainer,12
+2026-01-13,Gia,Halcyon Hotels,Halcyon — retainer,24
+2026-01-15,Kai,Halcyon Hotels,Halcyon — retainer,8
+2026-01-16,Ben,Northpoint Dental,Northpoint — retainer,16
+2026-01-16,Hugo,Northpoint Dental,Northpoint — retainer,21.7
+2026-01-16,Lea,Verde Organics,Verde — retainer,16
+2026-01-17,Ana,Verde Organics,Verde — retainer,12
+2026-01-17,Femi,Verde Organics,Verde — retainer,12
+2026-01-17,Femi,Kestrel Logistics,Kestrel — retainer,16
+2026-01-18,Ben,Opal Fitness,Opal — retainer,12
+2026-01-20,Jon,Halcyon Hotels,Halcyon — retainer,16
+2026-01-20,Ana,Opal Fitness,Opal — retainer,9.5
+2026-01-21,Ben,Verde Organics,Verde — retainer,4.9
+2026-01-21,Dan,Kestrel Logistics,Kestrel — retainer,16
+2026-01-22,Gia,Halcyon Hotels,Halcyon — retainer,16
+2026-01-23,Gia,Halcyon Hotels,Halcyon — retainer,16
+2026-01-23,Iris,Verde Organics,Verde — retainer,12
+2026-01-24,Femi,Verde Organics,Verde — retainer,8
+2026-01-25,Iris,Verde Organics,Verde — retainer,8
+2026-01-26,Dan,Kestrel Logistics,Kestrel — retainer,9.3
+2026-01-28,Dan,Northpoint Dental,Northpoint — retainer,8
+2026-01-28,Hugo,Northpoint Dental,Northpoint — retainer,8
+2026-01-28,Ana,,Internal,14
+2026-01-28,Ben,,Internal,18
+2026-01-28,Chloe,,Internal,10
+2026-01-28,Dan,,Internal,10
+2026-01-28,Eli,,Internal,18
+2026-01-28,Femi,,Internal,14
+2026-01-28,Gia,,Internal,14
+2026-01-28,Hugo,,Internal,18
+2026-01-28,Iris,,Internal,10
+2026-01-28,Jon,,Internal,10
+2026-01-28,Kai,,Internal,14
+2026-01-28,Lea,,Internal,14
+2026-02-01,Ana,Northpoint Dental,Northpoint — retainer,12
+2026-02-01,Eli,Northpoint Dental,Northpoint — retainer,4.3
+2026-02-02,Ben,Halden Retail,Halden — rebrand,16
+2026-02-02,Chloe,Halden Retail,Halden — rebrand,16
+2026-02-03,Lea,Opal Fitness,Opal — retainer,16
+2026-02-03,Kai,Halden Retail,Halden — rebrand,16
+2026-02-03,Eli,Halden Retail,Halden — rebrand,8
+2026-02-04,Dan,Halcyon Hotels,Halcyon — retainer,12
+2026-02-05,Ana,Opal Fitness,Opal — retainer,3.6
+2026-02-05,Gia,Halden Retail,Halden — rebrand,24
+2026-02-05,Eli,Halden Retail,Halden — rebrand,16
+2026-02-06,Chloe,Halden Retail,Halden — rebrand,12
+2026-02-07,Lea,Halcyon Hotels,Halcyon — retainer,16
+2026-02-07,Femi,Halcyon Hotels,Halcyon — retainer,24
+2026-02-08,Dan,Halden Retail,Halden — rebrand,8
+2026-02-09,Iris,Verde Organics,Verde — retainer,16
+2026-02-10,Iris,Verde Organics,Verde — retainer,12
+2026-02-11,Gia,Halden Retail,Halden — rebrand,24
+2026-02-11,Iris,Halden Retail,Halden — rebrand,8
+2026-02-12,Ben,Halcyon Hotels,Halcyon — retainer,16
+2026-02-12,Femi,Halden Retail,Halden — rebrand,12
+2026-02-13,Lea,Halcyon Hotels,Halcyon — retainer,8
+2026-02-13,Hugo,Halden Retail,Halden — rebrand,8
+2026-02-13,Hugo,Halden Retail,Halden — rebrand,8
+2026-02-13,Femi,Halden Retail,Halden — rebrand,8
+2026-02-14,Dan,Northpoint Dental,Northpoint — retainer,12
+2026-02-14,Ben,Halden Retail,Halden — rebrand,12
+2026-02-15,Lea,Halcyon Hotels,Halcyon — retainer,16
+2026-02-15,Gia,Opal Fitness,Opal — retainer,24
+2026-02-15,Femi,Halden Retail,Halden — rebrand,8
+2026-02-15,Dan,Halden Retail,Halden — rebrand,12
+2026-02-15,Lea,Halden Retail,Halden — rebrand,24
+2026-02-16,Jon,Halcyon Hotels,Halcyon — retainer,12
+2026-02-16,Kai,Halcyon Hotels,Halcyon — retainer,8
+2026-02-16,Chloe,Halcyon Hotels,Halcyon — retainer,4.5
+2026-02-17,Lea,Northpoint Dental,Northpoint — retainer,8
+2026-02-17,Iris,Halden Retail,Halden — rebrand,24
+2026-02-17,Dan,Halden Retail,Halden — rebrand,24
+2026-02-17,Ben,Halden Retail,Halden — rebrand,16
+2026-02-18,Iris,Northpoint Dental,Northpoint — retainer,12
+2026-02-18,Chloe,Kestrel Logistics,Kestrel — retainer,12
+2026-02-18,Ana,Halden Retail,Halden — rebrand,8
+2026-02-18,Ana,Halden Retail,Halden — rebrand,24
+2026-02-18,Dan,Halden Retail,Halden — rebrand,16
+2026-02-19,Hugo,Northpoint Dental,Northpoint — retainer,12
+2026-02-20,Jon,Northpoint Dental,Northpoint — retainer,12
+2026-02-20,Ana,Kestrel Logistics,Kestrel — retainer,11.5
+2026-02-20,Lea,Halden Retail,Halden — rebrand,24
+2026-02-22,Femi,Northpoint Dental,Northpoint — retainer,24
+2026-02-22,Jon,Verde Organics,Verde — retainer,19.7
+2026-02-22,Iris,Halden Retail,Halden — rebrand,16
+2026-02-22,Eli,Halden Retail,Halden — rebrand,12
+2026-02-22,Dan,Halden Retail,Halden — rebrand,12
+2026-02-23,Eli,Halden Retail,Halden — rebrand,12
+2026-02-23,Gia,Halden Retail,Halden — rebrand,12
+2026-02-24,Chloe,Opal Fitness,Opal — retainer,8
+2026-02-24,Femi,Verde Organics,Verde — retainer,8
+2026-02-24,Femi,Halden Retail,Halden — rebrand,8
+2026-02-25,Jon,Verde Organics,Verde — retainer,12
+2026-02-25,Chloe,Halden Retail,Halden — rebrand,8
+2026-02-25,Chloe,Halden Retail,Halden — rebrand,12.0
+2026-02-26,Kai,Halcyon Hotels,Halcyon — retainer,16
+2026-02-26,Kai,Opal Fitness,Opal — retainer,24
+2026-02-26,Ben,Halden Retail,Halden — rebrand,24
+2026-02-26,Dan,Halden Retail,Halden — rebrand,8
+2026-02-27,Kai,Halcyon Hotels,Halcyon — retainer,8
+2026-02-27,Chloe,Verde Organics,Verde — retainer,24
+2026-02-27,Iris,Kestrel Logistics,Kestrel — retainer,24
+2026-02-28,Hugo,Kestrel Logistics,Kestrel — retainer,8
+2026-02-28,Ana,,Internal,14
+2026-02-28,Ben,,Internal,18
+2026-02-28,Chloe,,Internal,14
+2026-02-28,Dan,,Internal,14
+2026-02-28,Eli,,Internal,10
+2026-02-28,Femi,,Internal,18
+2026-02-28,Gia,,Internal,18
+2026-02-28,Hugo,,Internal,18
+2026-02-28,Iris,,Internal,14
+2026-02-28,Jon,,Internal,18
+2026-02-28,Kai,,Internal,14
+2026-02-28,Lea,,Internal,10
+2026-03-01,Kai,Halcyon Hotels,Halcyon — retainer,16
+2026-03-01,Femi,Halcyon Hotels,Halcyon — retainer,24
+2026-03-01,Lea,Opal Fitness,Opal — retainer,8
+2026-03-01,Eli,Verde Organics,Verde — retainer,23.8
+2026-03-01,Femi,Kestrel Logistics,Kestrel — retainer,10.0
+2026-03-01,Hugo,Halden Retail,Halden — rebrand,12
+2026-03-01,Eli,Marlow Bank,Marlow — app launch campaign,24
+2026-03-02,Lea,Halcyon Hotels,Halcyon — retainer,16
+2026-03-02,Iris,Halcyon Hotels,Halcyon — retainer,12
+2026-03-02,Chloe,Halcyon Hotels,Halcyon — retainer,16
+2026-03-02,Hugo,Verde Organics,Verde — retainer,16
+2026-03-02,Lea,Halden Retail,Halden — rebrand,12
+2026-03-03,Kai,Northpoint Dental,Northpoint — retainer,8
+2026-03-03,Kai,Verde Organics,Verde — retainer,8
+2026-03-03,Hugo,Halden Retail,Halden — rebrand,24
+2026-03-03,Eli,Halden Retail,Halden — rebrand,8
+2026-03-03,Jon,Halden Retail,Halden — rebrand,12
+2026-03-03,Ana,Halden Retail,Halden — rebrand,12
+2026-03-03,Jon,Halden Retail,Halden — rebrand,12
+2026-03-03,Iris,Marlow Bank,Marlow — app launch campaign,24
+2026-03-04,Chloe,Halcyon Hotels,Halcyon — retainer,12
+2026-03-04,Gia,Halden Retail,Halden — rebrand,16
+2026-03-04,Lea,Marlow Bank,Marlow — app launch campaign,13.3
+2026-03-05,Gia,Halden Retail,Halden — rebrand,8
+2026-03-05,Eli,Halden Retail,Halden — rebrand,24
+2026-03-05,Kai,Halden Retail,Halden — rebrand,8
+2026-03-05,Lea,Marlow Bank,Marlow — app launch campaign,8
+2026-03-06,Eli,Verde Organics,Verde — retainer,12
+2026-03-07,Femi,Kestrel Logistics,Kestrel — retainer,16
+2026-03-07,Ben,Marlow Bank,Marlow — app launch campaign,12
+2026-03-08,Femi,Northpoint Dental,Northpoint — retainer,12
+2026-03-08,Ana,Kestrel Logistics,Kestrel — retainer,16
+2026-03-08,Iris,Halden Retail,Halden — rebrand,12
+2026-03-08,Lea,Halden Retail,Halden — rebrand,16
+2026-03-08,Lea,Halden Retail,Halden — rebrand,12
+2026-03-09,Ben,Halcyon Hotels,Halcyon — retainer,8
+2026-03-09,Jon,Halcyon Hotels,Halcyon — retainer,24
+2026-03-09,Femi,Opal Fitness,Opal — retainer,12
+2026-03-09,Ana,Opal Fitness,Opal — retainer,8
+2026-03-09,Ben,Halden Retail,Halden — rebrand,24
+2026-03-09,Gia,Marlow Bank,Marlow — app launch campaign,24
+2026-03-10,Kai,Halcyon Hotels,Halcyon — retainer,12
+2026-03-10,Kai,Halden Retail,Halden — rebrand,16
+2026-03-10,Lea,Halden Retail,Halden — rebrand,8.0
+2026-03-10,Ben,Marlow Bank,Marlow — app launch campaign,12
+2026-03-11,Iris,Kestrel Logistics,Kestrel — retainer,16
+2026-03-11,Eli,Halden Retail,Halden — rebrand,12
+2026-03-12,Chloe,Marlow Bank,Marlow — app launch campaign,16
+2026-03-13,Femi,Northpoint Dental,Northpoint — retainer,12
+2026-03-13,Ana,Halden Retail,Halden — rebrand,8
+2026-03-14,Ben,Halcyon Hotels,Halcyon — retainer,12
+2026-03-14,Chloe,Northpoint Dental,Northpoint — retainer,8.3
+2026-03-15,Iris,Opal Fitness,Opal — retainer,16
+2026-03-15,Ben,Opal Fitness,Opal — retainer,12
+2026-03-15,Ben,Halden Retail,Halden — rebrand,8
+2026-03-15,Hugo,Marlow Bank,Marlow — app launch campaign,16
+2026-03-16,Eli,Halden Retail,Halden — rebrand,12
+2026-03-16,Gia,Halden Retail,Halden — rebrand,24
+2026-03-16,Kai,Halden Retail,Halden — rebrand,8
+2026-03-16,Eli,Halden Retail,Halden — rebrand,8
+2026-03-17,Dan,Halcyon Hotels,Halcyon — retainer,3.6
+2026-03-17,Hugo,Opal Fitness,Opal — retainer,12
+2026-03-17,Eli,Northpoint Dental,Northpoint — retainer,24
+2026-03-17,Kai,Halden Retail,Halden — rebrand,16
+2026-03-17,Iris,Halden Retail,Halden — rebrand,12
+2026-03-18,Ana,Halden Retail,Halden — rebrand,24
+2026-03-20,Dan,Halcyon Hotels,Halcyon — retainer,8
+2026-03-20,Dan,Verde Organics,Verde — retainer,16
+2026-03-20,Jon,Halden Retail,Halden — rebrand,16
+2026-03-21,Iris,Halden Retail,Halden — rebrand,8
+2026-03-22,Hugo,Opal Fitness,Opal — retainer,3.5
+2026-03-22,Lea,Halden Retail,Halden — rebrand,12
+2026-03-22,Iris,Halden Retail,Halden — rebrand,8
+2026-03-23,Dan,Halden Retail,Halden — rebrand,8
+2026-03-24,Lea,Halden Retail,Halden — rebrand,24
+2026-03-24,Lea,Halden Retail,Halden — rebrand,8
+2026-03-25,Femi,Halden Retail,Halden — rebrand,24
+2026-03-25,Ana,Halden Retail,Halden — rebrand,16
+2026-03-25,Ben,Marlow Bank,Marlow — app launch campaign,24
+2026-03-26,Eli,Halcyon Hotels,Halcyon — retainer,8
+2026-03-27,Lea,Northpoint Dental,Northpoint — retainer,12
+2026-03-27,Chloe,Northpoint Dental,Northpoint — retainer,8
+2026-03-27,Kai,Halden Retail,Halden — rebrand,8
+2026-03-28,Iris,Verde Organics,Verde — retainer,24
+2026-03-28,Ana,,Internal,14
+2026-03-28,Ben,,Internal,10
+2026-03-28,Chloe,,Internal,14
+2026-03-28,Dan,,Internal,14
+2026-03-28,Eli,,Internal,14
+2026-03-28,Femi,,Internal,10
+2026-03-28,Gia,,Internal,10
+2026-03-28,Hugo,,Internal,10
+2026-03-28,Iris,,Internal,14
+2026-03-28,Jon,,Internal,18
+2026-03-28,Kai,,Internal,14
+2026-03-28,Lea,,Internal,14
+2026-04-01,Kai,Northpoint Dental,Northpoint — retainer,24
+2026-04-01,Lea,Halden Retail,Halden — rebrand,12
+2026-04-01,Ben,Halden Retail,Halden — rebrand,24
+2026-04-01,Chloe,Halden Retail,Halden — rebrand,8
+2026-04-01,Iris,Marlow Bank,Marlow — app launch campaign,8
+2026-04-01,Gia,Marlow Bank,Marlow — app launch campaign,12
+2026-04-02,Ana,Marlow Bank,Marlow — app launch campaign,16
+2026-04-03,Dan,Kestrel Logistics,Kestrel — retainer,12
+2026-04-03,Eli,Halden Retail,Halden — rebrand,12
+2026-04-03,Iris,Halden Retail,Halden — rebrand,24
+2026-04-03,Eli,Halden Retail,Halden — rebrand,8
+2026-04-03,Eli,Marlow Bank,Marlow — app launch campaign,24
+2026-04-04,Femi,Halcyon Hotels,Halcyon — retainer,16
+2026-04-04,Dan,Halcyon Hotels,Halcyon — retainer,24
+2026-04-04,Ana,Opal Fitness,Opal — retainer,16
+2026-04-04,Chloe,Kestrel Logistics,Kestrel — retainer,24
+2026-04-05,Iris,Halden Retail,Halden — rebrand,24
+2026-04-05,Kai,Halden Retail,Halden — rebrand,16
+2026-04-05,Ana,Halden Retail,Halden — rebrand,8
+2026-04-05,Kai,Halden Retail,Halden — rebrand,16
+2026-04-06,Hugo,Verde Organics,Verde — retainer,12
+2026-04-07,Femi,Opal Fitness,Opal — retainer,9.9
+2026-04-07,Ana,Saffron Kitchens,Saffron — website,24
+2026-04-07,Hugo,Saffron Kitchens,Saffron — website,8
+2026-04-08,Ben,Halden Retail,Halden — rebrand,12
+2026-04-08,Chloe,Halden Retail,Halden — rebrand,8
+2026-04-08,Hugo,Marlow Bank,Marlow — app launch campaign,16
+2026-04-09,Gia,Opal Fitness,Opal — retainer,12
+2026-04-09,Lea,Verde Organics,Verde — retainer,16
+2026-04-09,Jon,Halden Retail,Halden — rebrand,16
+2026-04-09,Jon,Halden Retail,Halden — rebrand,24
+2026-04-10,Hugo,Kestrel Logistics,Kestrel — retainer,12
+2026-04-10,Dan,Saffron Kitchens,Saffron — website,12
+2026-04-11,Femi,Halcyon Hotels,Halcyon — retainer,8
+2026-04-11,Eli,Verde Organics,Verde — retainer,24
+2026-04-11,Hugo,Halden Retail,Halden — rebrand,24
+2026-04-11,Iris,Halden Retail,Halden — rebrand,12
+2026-04-11,Dan,Halden Retail,Halden — rebrand,8
+2026-04-12,Gia,Halcyon Hotels,Halcyon — retainer,24
+2026-04-12,Ben,Halcyon Hotels,Halcyon — retainer,16
+2026-04-12,Gia,Opal Fitness,Opal — retainer,8
+2026-04-12,Kai,Saffron Kitchens,Saffron — website,24
+2026-04-13,Jon,Halcyon Hotels,Halcyon — retainer,20.8
+2026-04-13,Kai,Verde Organics,Verde — retainer,13.4
+2026-04-13,Gia,Halden Retail,Halden — rebrand,24
+2026-04-13,Eli,Halden Retail,Halden — rebrand,12
+2026-04-13,Gia,Halden Retail,Halden — rebrand,12
+2026-04-13,Eli,Halden Retail,Halden — rebrand,12.0
+2026-04-14,Eli,Halden Retail,Halden — rebrand,24
+2026-04-15,Dan,Halden Retail,Halden — rebrand,24
+2026-04-15,Eli,Marlow Bank,Marlow — app launch campaign,16
+2026-04-15,Dan,Saffron Kitchens,Saffron — website,12
+2026-04-16,Ana,Verde Organics,Verde — retainer,16
+2026-04-16,Kai,Marlow Bank,Marlow — app launch campaign,12
+2026-04-17,Kai,Halden Retail,Halden — rebrand,12
+2026-04-17,Kai,Halden Retail,Halden — rebrand,16
+2026-04-17,Dan,Marlow Bank,Marlow — app launch campaign,24
+2026-04-18,Iris,Northpoint Dental,Northpoint — retainer,24
+2026-04-18,Dan,Kestrel Logistics,Kestrel — retainer,18.7
+2026-04-19,Ana,Halden Retail,Halden — rebrand,12
+2026-04-20,Chloe,Northpoint Dental,Northpoint — retainer,21.2
+2026-04-20,Hugo,Saffron Kitchens,Saffron — website,8.0
+2026-04-21,Chloe,Opal Fitness,Opal — retainer,16
+2026-04-21,Dan,Marlow Bank,Marlow — app launch campaign,16
+2026-04-22,Gia,Marlow Bank,Marlow — app launch campaign,12
+2026-04-23,Hugo,Halden Retail,Halden — rebrand,24
+2026-04-23,Ben,Halden Retail,Halden — rebrand,24
+2026-04-23,Femi,Marlow Bank,Marlow — app launch campaign,5.3
+2026-04-24,Chloe,Halcyon Hotels,Halcyon — retainer,16
+2026-04-24,Eli,Halcyon Hotels,Halcyon — retainer,8
+2026-04-24,Ben,Northpoint Dental,Northpoint — retainer,12
+2026-04-24,Gia,Northpoint Dental,Northpoint — retainer,8
+2026-04-24,Iris,Saffron Kitchens,Saffron — website,16
+2026-04-25,Ana,Halden Retail,Halden — rebrand,16
+2026-04-25,Eli,Saffron Kitchens,Saffron — website,16
+2026-04-26,Jon,Marlow Bank,Marlow — app launch campaign,12
+2026-04-27,Iris,Halden Retail,Halden — rebrand,24
+2026-04-27,Lea,Halden Retail,Halden — rebrand,8
+2026-04-28,Ana,Opal Fitness,Opal — retainer,16
+2026-04-28,Ana,,Internal,18
+2026-04-28,Ben,,Internal,10
+2026-04-28,Chloe,,Internal,10
+2026-04-28,Dan,,Internal,14
+2026-04-28,Eli,,Internal,14
+2026-04-28,Femi,,Internal,18
+2026-04-28,Gia,,Internal,10
+2026-04-28,Hugo,,Internal,18
+2026-04-28,Iris,,Internal,10
+2026-04-28,Jon,,Internal,14
+2026-04-28,Kai,,Internal,10
+2026-04-28,Lea,,Internal,10
+2026-05-01,Ben,Opal Fitness,Opal — retainer,8
+2026-05-01,Dan,Kestrel Logistics,Kestrel — retainer,8
+2026-05-02,Lea,Halcyon Hotels,Halcyon — retainer,24
+2026-05-02,Eli,Halcyon Hotels,Halcyon — retainer,24
+2026-05-02,Lea,Northpoint Dental,Northpoint — retainer,8
+2026-05-02,Gia,Verde Organics,Verde — retainer,24
+2026-05-02,Ben,Marlow Bank,Marlow — app launch campaign,24
+2026-05-03,Chloe,Halcyon Hotels,Halcyon — retainer,8
+2026-05-03,Femi,Opal Fitness,Opal — retainer,16
+2026-05-03,Eli,Halden Retail,Halden — rebrand (phase 2),8
+2026-05-03,Femi,Marlow Bank,Marlow — app launch campaign,12
+2026-05-03,Dan,Saffron Kitchens,Saffron — website,4.0
+2026-05-03,Gia,Brio Travel,Brio — summer campaign,24
+2026-05-04,Iris,Opal Fitness,Opal — retainer,24
+2026-05-04,Kai,Saffron Kitchens,Saffron — website,8
+2026-05-05,Eli,Marlow Bank,Marlow — app launch campaign,12
+2026-05-06,Gia,Halcyon Hotels,Halcyon — retainer,8
+2026-05-06,Gia,Halden Retail,Halden — rebrand (phase 2),16
+2026-05-06,Dan,Halden Retail,Halden — rebrand (phase 2),24
+2026-05-06,Dan,Marlow Bank,Marlow — app launch campaign,12
+2026-05-06,Jon,Saffron Kitchens,Saffron — website,16
+2026-05-07,Chloe,Halcyon Hotels,Halcyon — retainer,16
+2026-05-07,Femi,Northpoint Dental,Northpoint — retainer,24
+2026-05-07,Femi,Northpoint Dental,Northpoint — retainer,24
+2026-05-07,Ben,Halden Retail,Halden — rebrand (phase 2),8
+2026-05-07,Hugo,Halden Retail,Halden — rebrand (phase 2),16.0
+2026-05-07,Jon,Marlow Bank,Marlow — app launch campaign,8
+2026-05-07,Ana,Saffron Kitchens,Saffron — website,16
+2026-05-07,Eli,Saffron Kitchens,Saffron — website,8
+2026-05-08,Ben,Marlow Bank,Marlow — app launch campaign,16
+2026-05-09,Dan,Verde Organics,Verde — retainer,8
+2026-05-09,Femi,Verde Organics,Verde — retainer,16
+2026-05-09,Lea,Verde Organics,Verde — retainer,8
+2026-05-09,Eli,Verde Organics,Verde — retainer,9.9
+2026-05-09,Jon,Halden Retail,Halden — rebrand (phase 2),16
+2026-05-09,Dan,Marlow Bank,Marlow — app launch campaign,24
+2026-05-11,Ben,Marlow Bank,Marlow — app launch campaign,12
+2026-05-11,Chloe,Saffron Kitchens,Saffron — website,16
+2026-05-12,Jon,Halden Retail,Halden — rebrand (phase 2),24
+2026-05-12,Eli,Halden Retail,Halden — rebrand (phase 2),16
+2026-05-12,Ana,Marlow Bank,Marlow — app launch campaign,24
+2026-05-13,Femi,Opal Fitness,Opal — retainer,12
+2026-05-14,Hugo,Kestrel Logistics,Kestrel — retainer,4.5
+2026-05-14,Ben,Halden Retail,Halden — rebrand (phase 2),12
+2026-05-14,Hugo,Halden Retail,Halden — rebrand (phase 2),12
+2026-05-14,Kai,Saffron Kitchens,Saffron — website,16
+2026-05-15,Chloe,Halcyon Hotels,Halcyon — retainer,10.3
+2026-05-15,Ben,Verde Organics,Verde — retainer,8
+2026-05-15,Jon,Marlow Bank,Marlow — app launch campaign,9.3
+2026-05-16,Lea,Kestrel Logistics,Kestrel — retainer,8
+2026-05-16,Chloe,Halden Retail,Halden — rebrand (phase 2),12
+2026-05-16,Iris,Halden Retail,Halden — rebrand (phase 2),8
+2026-05-16,Lea,Halden Retail,Halden — rebrand (phase 2),24
+2026-05-16,Dan,Marlow Bank,Marlow — app launch campaign,8
+2026-05-17,Dan,Halden Retail,Halden — rebrand (phase 2),8
+2026-05-20,Chloe,Halcyon Hotels,Halcyon — retainer,8
+2026-05-20,Femi,Verde Organics,Verde — retainer,8
+2026-05-20,Dan,Halden Retail,Halden — rebrand (phase 2),12
+2026-05-20,Lea,Saffron Kitchens,Saffron — website,8
+2026-05-21,Gia,Northpoint Dental,Northpoint — retainer,1.8
+2026-05-21,Ben,Marlow Bank,Marlow — app launch campaign,12
+2026-05-21,Iris,Brio Travel,Brio — summer campaign,12
+2026-05-21,Chloe,Brio Travel,Brio — summer campaign,8
+2026-05-23,Femi,Halcyon Hotels,Halcyon — retainer,24
+2026-05-23,Eli,Brio Travel,Brio — summer campaign,16.7
+2026-05-24,Hugo,Northpoint Dental,Northpoint — retainer,16
+2026-05-24,Jon,Kestrel Logistics,Kestrel — retainer,8
+2026-05-24,Iris,Halden Retail,Halden — rebrand (phase 2),12
+2026-05-25,Gia,Kestrel Logistics,Kestrel — retainer,24
+2026-05-25,Chloe,Halden Retail,Halden — rebrand (phase 2),24
+2026-05-25,Eli,Halden Retail,Halden — rebrand (phase 2),8
+2026-05-25,Kai,Saffron Kitchens,Saffron — website,16
+2026-05-26,Kai,Verde Organics,Verde — retainer,12
+2026-05-26,Lea,Halden Retail,Halden — rebrand (phase 2),8
+2026-05-26,Hugo,Brio Travel,Brio — summer campaign,8
+2026-05-26,Gia,Brio Travel,Brio — summer campaign,8
+2026-05-27,Femi,Halcyon Hotels,Halcyon — retainer,24
+2026-05-27,Gia,Opal Fitness,Opal — retainer,6.1
+2026-05-27,Lea,Halden Retail,Halden — rebrand (phase 2),16
+2026-05-27,Ana,Saffron Kitchens,Saffron — website,12
+2026-05-28,Femi,Halden Retail,Halden — rebrand (phase 2),16
+2026-05-28,Ana,,Internal,14
+2026-05-28,Ben,,Internal,14
+2026-05-28,Chloe,,Internal,18
+2026-05-28,Dan,,Internal,14
+2026-05-28,Eli,,Internal,14
+2026-05-28,Femi,,Internal,10
+2026-05-28,Gia,,Internal,14
+2026-05-28,Hugo,,Internal,18
+2026-05-28,Iris,,Internal,18
+2026-05-28,Jon,,Internal,14
+2026-05-28,Kai,,Internal,14
+2026-05-28,Lea,,Internal,14
+2026-06-01,Ana,Halcyon Hotels,Halcyon — retainer,12
+2026-06-02,Gia,Verde Organics,Verde — retainer,12
+2026-06-02,Iris,Verde Organics,Verde — retainer,12
+2026-06-02,Kai,Halden Retail,Halden — rebrand (phase 2),8
+2026-06-02,Iris,Halden Retail,Halden — rebrand (phase 2),8
+2026-06-03,Ben,Opal Fitness,Opal — retainer,12
+2026-06-03,Lea,Northpoint Dental,Northpoint — retainer,24
+2026-06-03,Lea,Halden Retail,Halden — rebrand (phase 2),12
+2026-06-03,Femi,Halden Retail,Halden — rebrand (phase 2),12
+2026-06-05,Femi,Opal Fitness,Opal — retainer,12
+2026-06-05,Ana,Opal Fitness,Opal — retainer,10.1
+2026-06-05,Dan,Verde Organics,Verde — retainer,8
+2026-06-05,Femi,Halden Retail,Halden — rebrand (phase 2),8
+2026-06-06,Gia,Halcyon Hotels,Halcyon — retainer,24
+2026-06-06,Iris,Opal Fitness,Opal — retainer,16
+2026-06-06,Jon,Northpoint Dental,Northpoint — retainer,6.1
+2026-06-06,Ana,Kestrel Logistics,Kestrel — retainer,3.1
+2026-06-06,Femi,Halden Retail,Halden — rebrand (phase 2),16
+2026-06-06,Kai,Saffron Kitchens,Saffron — website,24
+2026-06-06,Eli,Saffron Kitchens,Saffron — website,20.0
+2026-06-07,Ana,Halcyon Hotels,Halcyon — retainer,24
+2026-06-07,Chloe,Halden Retail,Halden — rebrand (phase 2),8
+2026-06-07,Jon,Saffron Kitchens,Saffron — website,24
+2026-06-07,Chloe,Saffron Kitchens,Saffron — website,8
+2026-06-08,Hugo,Halden Retail,Halden — rebrand (phase 2),24
+2026-06-08,Chloe,Tidewater Energy,Tidewater — annual report,8
+2026-06-09,Iris,Halden Retail,Halden — rebrand (phase 2),12.0
+2026-06-09,Iris,Brio Travel,Brio — summer campaign,8
+2026-06-10,Chloe,Halden Retail,Halden — rebrand (phase 2),24
+2026-06-10,Iris,Tidewater Energy,Tidewater — annual report,8
+2026-06-10,Kai,Tidewater Energy,Tidewater — annual report,16
+2026-06-11,Ana,Northpoint Dental,Northpoint — retainer,24
+2026-06-11,Femi,Saffron Kitchens,Saffron — website,12
+2026-06-12,Ben,Halden Retail,Halden — rebrand (phase 2),24
+2026-06-12,Femi,Tidewater Energy,Tidewater — annual report,12
+2026-06-13,Lea,Halcyon Hotels,Halcyon — retainer,12
+2026-06-13,Femi,Verde Organics,Verde — retainer,12
+2026-06-13,Jon,Verde Organics,Verde — retainer,8
+2026-06-13,Kai,Kestrel Logistics,Kestrel — retainer,24
+2026-06-13,Ben,Halden Retail,Halden — rebrand (phase 2),24
+2026-06-13,Femi,Brio Travel,Brio — summer campaign,4.7
+2026-06-14,Iris,Tidewater Energy,Tidewater — annual report,4.0
+2026-06-15,Iris,Kestrel Logistics,Kestrel — retainer,16
+2026-06-15,Dan,Tidewater Energy,Tidewater — annual report,8
+2026-06-16,Dan,Opal Fitness,Opal — retainer,24
+2026-06-17,Iris,Halden Retail,Halden — rebrand (phase 2),24
+2026-06-18,Kai,Verde Organics,Verde — retainer,24
+2026-06-18,Iris,Brio Travel,Brio — summer campaign,24
+2026-06-19,Femi,Halcyon Hotels,Halcyon — retainer,24
+2026-06-19,Jon,Halcyon Hotels,Halcyon — retainer,8
+2026-06-19,Dan,Kestrel Logistics,Kestrel — retainer,16
+2026-06-20,Dan,Northpoint Dental,Northpoint — retainer,24
+2026-06-20,Hugo,Halden Retail,Halden — rebrand (phase 2),8
+2026-06-20,Iris,Saffron Kitchens,Saffron — website,16
+2026-06-20,Lea,Tidewater Energy,Tidewater — annual report,12
+2026-06-20,Kai,Tidewater Energy,Tidewater — annual report,16
+2026-06-21,Gia,Halcyon Hotels,Halcyon — retainer,12
+2026-06-21,Dan,Northpoint Dental,Northpoint — retainer,12
+2026-06-21,Gia,Verde Organics,Verde — retainer,1.5
+2026-06-21,Chloe,Halden Retail,Halden — rebrand (phase 2),24
+2026-06-21,Femi,Brio Travel,Brio — summer campaign,8
+2026-06-22,Femi,Verde Organics,Verde — retainer,8
+2026-06-22,Femi,Saffron Kitchens,Saffron — website,16
+2026-06-24,Iris,Halcyon Hotels,Halcyon — retainer,5.6
+2026-06-24,Femi,Brio Travel,Brio — summer campaign,24
+2026-06-24,Ana,Tidewater Energy,Tidewater — annual report,16
+2026-06-25,Chloe,Halcyon Hotels,Halcyon — retainer,24
+2026-06-25,Lea,Halden Retail,Halden — rebrand (phase 2),16
+2026-06-25,Iris,Brio Travel,Brio — summer campaign,8
+2026-06-27,Ben,Halcyon Hotels,Halcyon — retainer,8
+2026-06-27,Chloe,Halden Retail,Halden — rebrand (phase 2),24
+2026-06-27,Hugo,Halden Retail,Halden — rebrand (phase 2),16
+2026-06-28,Femi,Halcyon Hotels,Halcyon — retainer,8
+2026-06-28,Ben,Halden Retail,Halden — rebrand (phase 2),8
+2026-06-28,Ana,,Internal,14
+2026-06-28,Ben,,Internal,10
+2026-06-28,Chloe,,Internal,10
+2026-06-28,Dan,,Internal,14
+2026-06-28,Eli,,Internal,10
+2026-06-28,Femi,,Internal,18
+2026-06-28,Gia,,Internal,18
+2026-06-28,Hugo,,Internal,10
+2026-06-28,Iris,,Internal,10
+2026-06-28,Jon,,Internal,10
+2026-06-28,Kai,,Internal,10
+2026-06-28,Lea,,Internal,18
+2026-07-01,Jon,Northpoint Dental,Northpoint — retainer,8
+2026-07-01,Ana,Halden Retail,Halden — rebrand (phase 2),8
+2026-07-02,Kai,Opal Fitness,Opal — retainer,8
+2026-07-02,Ana,Northpoint Dental,Northpoint — retainer,8
+2026-07-02,Ana,Halden Retail,Halden — rebrand (phase 2),12
+2026-07-02,Kai,Marlow Bank,Marlow — Q3 campaign,8
+2026-07-02,Lea,Marlow Bank,Marlow — Q3 campaign,16
+2026-07-03,Lea,Verde Organics,Verde — retainer,24
+2026-07-03,Iris,Halden Retail,Halden — rebrand (phase 2),12
+2026-07-03,Jon,Halden Retail,Halden — rebrand (phase 2),8
+2026-07-04,Femi,Verde Organics,Verde — retainer,4.1
+2026-07-04,Jon,Halden Retail,Halden — rebrand (phase 2),8
+2026-07-04,Dan,Halden Retail,Halden — rebrand (phase 2),4.0
+2026-07-04,Kai,Marlow Bank,Marlow — Q3 campaign,12
+2026-07-05,Gia,Northpoint Dental,Northpoint — retainer,12
+2026-07-06,Chloe,Halcyon Hotels,Halcyon — retainer,24
+2026-07-06,Ana,Northpoint Dental,Northpoint — retainer,12
+2026-07-06,Dan,Verde Organics,Verde — retainer,24
+2026-07-06,Eli,Halden Retail,Halden — rebrand (phase 2),8
+2026-07-06,Lea,Halden Retail,Halden — rebrand (phase 2),12
+2026-07-06,Gia,Brio Travel,Brio — summer campaign,16
+2026-07-07,Femi,Halcyon Hotels,Halcyon — retainer,12
+2026-07-07,Gia,Halden Retail,Halden — rebrand (phase 2),16
+2026-07-07,Iris,Halden Retail,Halden — rebrand (phase 2),16
+2026-07-07,Ben,Marlow Bank,Marlow — Q3 campaign,12
+2026-07-08,Chloe,Opal Fitness,Opal — retainer,24.0
+2026-07-09,Dan,Verde Organics,Verde — retainer,8
+2026-07-10,Ben,Halcyon Hotels,Halcyon — retainer,16
+2026-07-10,Kai,Verde Organics,Verde — retainer,8
+2026-07-10,Kai,Kestrel Logistics,Kestrel — retainer,4.9
+2026-07-10,Femi,Marlow Bank,Marlow — Q3 campaign,12
+2026-07-11,Jon,Marlow Bank,Marlow — Q3 campaign,16
+2026-07-12,Chloe,Halden Retail,Halden — rebrand (phase 2),12
+2026-07-12,Eli,Marlow Bank,Marlow — Q3 campaign,8
+2026-07-12,Hugo,Brio Travel,Brio — summer campaign,8
+2026-07-12,Hugo,Tidewater Energy,Tidewater — annual report,8
+2026-07-13,Eli,Halcyon Hotels,Halcyon — retainer,14.3
+2026-07-13,Chloe,Northpoint Dental,Northpoint — retainer,8
+2026-07-13,Gia,Verde Organics,Verde — retainer,8
+2026-07-14,Eli,Marlow Bank,Marlow — Q3 campaign,16
+2026-07-14,Iris,Brio Travel,Brio — summer campaign,8
+2026-07-15,Ben,Halcyon Hotels,Halcyon — retainer,12
+2026-07-16,Iris,Halden Retail,Halden — rebrand (phase 2),24
+2026-07-16,Ben,Marlow Bank,Marlow — Q3 campaign,16
+2026-07-16,Lea,Tidewater Energy,Tidewater — annual report,8
+2026-07-16,Jon,Tidewater Energy,Tidewater — annual report,12
+2026-07-16,Chloe,Tidewater Energy,Tidewater — annual report,12
+2026-07-17,Jon,Northpoint Dental,Northpoint — retainer,12
+2026-07-17,Eli,Northpoint Dental,Northpoint — retainer,4.8
+2026-07-17,Dan,Brio Travel,Brio — summer campaign,8
+2026-07-18,Dan,Halcyon Hotels,Halcyon — retainer,16
+2026-07-18,Jon,Brio Travel,Brio — summer campaign,8
+2026-07-19,Eli,Halcyon Hotels,Halcyon — retainer,24
+2026-07-19,Chloe,Halden Retail,Halden — rebrand (phase 2),8
+2026-07-19,Chloe,Tidewater Energy,Tidewater — annual report,16
+2026-07-20,Kai,Opal Fitness,Opal — retainer,16
+2026-07-20,Iris,Opal Fitness,Opal — retainer,24
+2026-07-20,Dan,Halden Retail,Halden — rebrand (phase 2),16
+2026-07-20,Jon,Halden Retail,Halden — rebrand (phase 2),24
+2026-07-21,Chloe,Halcyon Hotels,Halcyon — retainer,8
+2026-07-21,Iris,Kestrel Logistics,Kestrel — retainer,16
+2026-07-21,Ben,Tidewater Energy,Tidewater — annual report,8
+2026-07-22,Iris,Kestrel Logistics,Kestrel — retainer,24
+2026-07-23,Ana,Kestrel Logistics,Kestrel — retainer,16
+2026-07-23,Kai,Halden Retail,Halden — rebrand (phase 2),12
+2026-07-23,Ben,Halden Retail,Halden — rebrand (phase 2),8
+2026-07-23,Ben,Brio Travel,Brio — summer campaign,12
+2026-07-24,Hugo,Verde Organics,Verde — retainer,8
+2026-07-24,Dan,Halden Retail,Halden — rebrand (phase 2),24
+2026-07-25,Ana,Brio Travel,Brio — summer campaign,16
+2026-07-26,Dan,Halcyon Hotels,Halcyon — retainer,8
+2026-07-26,Dan,Halden Retail,Halden — rebrand (phase 2),16
+2026-07-26,Gia,Marlow Bank,Marlow — Q3 campaign,8
+2026-07-26,Lea,Tidewater Energy,Tidewater — annual report,4.0
+2026-07-27,Jon,Northpoint Dental,Northpoint — retainer,24
+2026-07-27,Lea,Halden Retail,Halden — rebrand (phase 2),12
+2026-07-27,Kai,Marlow Bank,Marlow — Q3 campaign,8
+2026-07-27,Iris,Tidewater Energy,Tidewater — annual report,16
+2026-07-27,Dan,Tidewater Energy,Tidewater — annual report,16
+2026-07-28,Kai,Halden Retail,Halden — rebrand (phase 2),24
+2026-07-28,Ana,Halden Retail,Halden — rebrand (phase 2),8
+2026-07-28,Lea,Halden Retail,Halden — rebrand (phase 2),8
+2026-07-28,Eli,Marlow Bank,Marlow — Q3 campaign,24
+2026-07-28,Ana,,Internal,18
+2026-07-28,Ben,,Internal,10
+2026-07-28,Chloe,,Internal,18
+2026-07-28,Dan,,Internal,14
+2026-07-28,Eli,,Internal,14
+2026-07-28,Femi,,Internal,10
+2026-07-28,Gia,,Internal,14
+2026-07-28,Hugo,,Internal,14
+2026-07-28,Iris,,Internal,18
+2026-07-28,Jon,,Internal,10
+2026-07-28,Kai,,Internal,14
+2026-07-28,Lea,,Internal,18
+2026-08-01,Lea,Verde Organics,Verde — retainer,24
+2026-08-02,Eli,Marlow Bank,Marlow — Q3 campaign,8
+2026-08-02,Ana,Saffron Kitchens,Saffron — menu shoot,24
+2026-08-04,Kai,Northpoint Dental,Northpoint — retainer,12
+2026-08-05,Femi,Halcyon Hotels,Halcyon — retainer,12
+2026-08-05,Eli,Northpoint Dental,Northpoint — retainer,12
+2026-08-06,Hugo,Halcyon Hotels,Halcyon — retainer,16
+2026-08-06,Dan,Opal Fitness,Opal — retainer,16
+2026-08-06,Kai,Northpoint Dental,Northpoint — retainer,8
+2026-08-06,Lea,Marlow Bank,Marlow — Q3 campaign,12
+2026-08-07,Eli,Opal Fitness,Opal — retainer,3.7
+2026-08-07,Gia,Northpoint Dental,Northpoint — retainer,8
+2026-08-08,Eli,Saffron Kitchens,Saffron — menu shoot,8
+2026-08-09,Gia,Halcyon Hotels,Halcyon — retainer,16
+2026-08-09,Dan,Northpoint Dental,Northpoint — retainer,8
+2026-08-09,Jon,Verde Organics,Verde — retainer,12
+2026-08-09,Kai,Kestrel Logistics,Kestrel — retainer,16
+2026-08-09,Gia,Marlow Bank,Marlow — Q3 campaign,12
+2026-08-09,Gia,Tidewater Energy,Tidewater — annual report,8.0
+2026-08-10,Lea,Opal Fitness,Opal — retainer,16
+2026-08-12,Dan,Halcyon Hotels,Halcyon — retainer,8
+2026-08-12,Jon,Halcyon Hotels,Halcyon — retainer,8
+2026-08-13,Kai,Halcyon Hotels,Halcyon — retainer,12
+2026-08-13,Gia,Northpoint Dental,Northpoint — retainer,8
+2026-08-13,Hugo,Marlow Bank,Marlow — Q3 campaign,8
+2026-08-14,Eli,Northpoint Dental,Northpoint — retainer,16
+2026-08-14,Dan,Kestrel Logistics,Kestrel — retainer,8
+2026-08-14,Gia,Saffron Kitchens,Saffron — menu shoot,8
+2026-08-15,Chloe,Halcyon Hotels,Halcyon — retainer,12
+2026-08-15,Ana,Northpoint Dental,Northpoint — retainer,24
+2026-08-15,Ana,Verde Organics,Verde — retainer,16
+2026-08-15,Gia,Kestrel Logistics,Kestrel — retainer,8
+2026-08-15,Ana,Marlow Bank,Marlow — Q3 campaign,24
+2026-08-17,Chloe,Halcyon Hotels,Halcyon — retainer,16
+2026-08-17,Dan,Opal Fitness,Opal — retainer,12
+2026-08-17,Kai,Northpoint Dental,Northpoint — retainer,1.6
+2026-08-17,Kai,Marlow Bank,Marlow — Q3 campaign,24
+2026-08-17,Femi,Marlow Bank,Marlow — Q3 campaign,12
+2026-08-17,Ana,Marlow Bank,Marlow — Q3 campaign,12.7
+2026-08-17,Femi,Tidewater Energy,Tidewater — annual report,16
+2026-08-17,Ben,Tidewater Energy,Tidewater — annual report,24
+2026-08-17,Dan,Saffron Kitchens,Saffron — menu shoot,4.0
+2026-08-18,Dan,Marlow Bank,Marlow — Q3 campaign,24
+2026-08-19,Eli,Saffron Kitchens,Saffron — menu shoot,16
+2026-08-21,Lea,Halcyon Hotels,Halcyon — retainer,1.5
+2026-08-21,Femi,Marlow Bank,Marlow — Q3 campaign,12
+2026-08-21,Ana,Tidewater Energy,Tidewater — annual report,16
+2026-08-22,Iris,Halcyon Hotels,Halcyon — retainer,24
+2026-08-22,Chloe,Kestrel Logistics,Kestrel — retainer,12
+2026-08-22,Chloe,Tidewater Energy,Tidewater — annual report,12
+2026-08-23,Eli,Halcyon Hotels,Halcyon — retainer,24
+2026-08-23,Lea,Kestrel Logistics,Kestrel — retainer,22.9
+2026-08-24,Chloe,Opal Fitness,Opal — retainer,12
+2026-08-24,Femi,Opal Fitness,Opal — retainer,12
+2026-08-24,Hugo,Tidewater Energy,Tidewater — annual report,24
+2026-08-28,Gia,Verde Organics,Verde — retainer,12
+2026-08-28,Dan,Verde Organics,Verde — retainer,18.4
+2026-08-28,Jon,Marlow Bank,Marlow — Q3 campaign,8
+2026-08-28,Ana,,Internal,14
+2026-08-28,Ben,,Internal,14
+2026-08-28,Chloe,,Internal,10
+2026-08-28,Dan,,Internal,10
+2026-08-28,Eli,,Internal,10
+2026-08-28,Femi,,Internal,10
+2026-08-28,Gia,,Internal,18
+2026-08-28,Hugo,,Internal,10
+2026-08-28,Iris,,Internal,14
+2026-08-28,Jon,,Internal,18
+2026-08-28,Kai,,Internal,18
+2026-08-28,Lea,,Internal,18
+2026-09-01,Jon,Marlow Bank,Marlow — Q3 campaign,8
+2026-09-01,Ana,Corvo Wines,Corvo — launch video,8
+2026-09-03,Jon,Opal Fitness,Opal — retainer,8
+2026-09-03,Kai,Northpoint Dental,Northpoint — retainer,12
+2026-09-04,Kai,Marlow Bank,Marlow — Q3 campaign,8.7
+2026-09-05,Jon,Corvo Wines,Corvo — launch video,16
+2026-09-06,Hugo,Northpoint Dental,Northpoint — retainer,12
+2026-09-06,Femi,Kestrel Logistics,Kestrel — retainer,8
+2026-09-07,Hugo,Verde Organics,Verde — retainer,16
+2026-09-07,Lea,Marlow Bank,Marlow — Q3 campaign,8
+2026-09-07,Kai,Corvo Wines,Corvo — launch video,16
+2026-09-07,Femi,Corvo Wines,Corvo — launch video,16
+2026-09-09,Jon,Northpoint Dental,Northpoint — retainer,16
+2026-09-09,Gia,Verde Organics,Verde — retainer,8
+2026-09-10,Gia,Opal Fitness,Opal — retainer,12
+2026-09-10,Gia,Saffron Kitchens,Saffron — menu shoot,12
+2026-09-11,Hugo,Opal Fitness,Opal — retainer,16
+2026-09-11,Hugo,Saffron Kitchens,Saffron — menu shoot,16
+2026-09-11,Iris,Corvo Wines,Corvo — launch video,24
+2026-09-12,Dan,Halcyon Hotels,Halcyon — retainer,5.3
+2026-09-12,Gia,Marlow Bank,Marlow — Q3 campaign,24
+2026-09-12,Hugo,Saffron Kitchens,Saffron — menu shoot,8.0
+2026-09-13,Iris,Northpoint Dental,Northpoint — retainer,5.2
+2026-09-13,Eli,Corvo Wines,Corvo — launch video,8
+2026-09-14,Kai,Halcyon Hotels,Halcyon — retainer,16
+2026-09-14,Jon,Opal Fitness,Opal — retainer,24
+2026-09-14,Eli,Saffron Kitchens,Saffron — menu shoot,16
+2026-09-15,Eli,Halcyon Hotels,Halcyon — retainer,24
+2026-09-16,Ana,Halcyon Hotels,Halcyon — retainer,12
+2026-09-16,Iris,Verde Organics,Verde — retainer,10.6
+2026-09-16,Hugo,Kestrel Logistics,Kestrel — retainer,8
+2026-09-16,Chloe,Kestrel Logistics,Kestrel — retainer,12
+2026-09-16,Chloe,Marlow Bank,Marlow — Q3 campaign,24
+2026-09-17,Ben,Verde Organics,Verde — retainer,12
+2026-09-18,Jon,Corvo Wines,Corvo — launch video,24
+2026-09-19,Chloe,Northpoint Dental,Northpoint — retainer,8
+2026-09-20,Lea,Verde Organics,Verde — retainer,12
+2026-09-20,Chloe,Corvo Wines,Corvo — launch video,6.0
+2026-09-21,Jon,Northpoint Dental,Northpoint — retainer,16
+2026-09-21,Femi,Marlow Bank,Marlow — Q3 campaign,12
+2026-09-21,Chloe,Marlow Bank,Marlow — Q3 campaign,24
+2026-09-22,Kai,Halcyon Hotels,Halcyon — retainer,16
+2026-09-22,Femi,Opal Fitness,Opal — retainer,8
+2026-09-22,Ana,Northpoint Dental,Northpoint — retainer,8
+2026-09-22,Iris,Verde Organics,Verde — retainer,8
+2026-09-22,Ben,Verde Organics,Verde — retainer,24
+2026-09-22,Eli,Kestrel Logistics,Kestrel — retainer,1.7
+2026-09-22,Ben,Marlow Bank,Marlow — Q3 campaign,24
+2026-09-22,Lea,Marlow Bank,Marlow — Q3 campaign,8
+2026-09-23,Gia,Halcyon Hotels,Halcyon — retainer,16
+2026-09-23,Hugo,Kestrel Logistics,Kestrel — retainer,12
+2026-09-23,Jon,Kestrel Logistics,Kestrel — retainer,24
+2026-09-24,Iris,Corvo Wines,Corvo — launch video,24
+2026-09-25,Hugo,Halcyon Hotels,Halcyon — retainer,12
+2026-09-26,Dan,Halcyon Hotels,Halcyon — retainer,16
+2026-09-26,Chloe,Opal Fitness,Opal — retainer,1.1
+2026-09-26,Chloe,Northpoint Dental,Northpoint — retainer,16
+2026-09-26,Ben,Marlow Bank,Marlow — Q3 campaign,16
+2026-09-26,Ben,Corvo Wines,Corvo — launch video,24
+2026-09-26,Ana,Corvo Wines,Corvo — launch video,8
+2026-09-26,Iris,Corvo Wines,Corvo — launch video,8
+2026-09-27,Chloe,Halcyon Hotels,Halcyon — retainer,12
+2026-09-27,Chloe,Verde Organics,Verde — retainer,12
+2026-09-27,Eli,Saffron Kitchens,Saffron — menu shoot,8
+2026-09-27,Hugo,Corvo Wines,Corvo — launch video,12
+2026-09-28,Iris,Corvo Wines,Corvo — launch video,16
+2026-09-28,Ana,,Internal,18
+2026-09-28,Ben,,Internal,18
+2026-09-28,Chloe,,Internal,18
+2026-09-28,Dan,,Internal,18
+2026-09-28,Eli,,Internal,18
+2026-09-28,Femi,,Internal,18
+2026-09-28,Gia,,Internal,10
+2026-09-28,Hugo,,Internal,10
+2026-09-28,Iris,,Internal,10
+2026-09-28,Jon,,Internal,18
+2026-09-28,Kai,,Internal,18
+2026-09-28,Lea,,Internal,14

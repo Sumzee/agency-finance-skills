@@ -1,0 +1,53 @@
+{
+  "business": {
+    "name": "Lumen Creative",
+    "type": "Marketing / creative agency",
+    "revenue_model": "Monthly retainers + client projects",
+    "team_size": "11-20",
+    "wants": "Why the bank balance keeps falling while we're profitable",
+    "data_location": "Invoicing tool + bank export + timesheet",
+    "owner_pay": {"method": "draws", "monthly_outside_data": 0},
+    "hour_cost": 38,
+    "target_hourly_rate": 85
+  },
+  "team_categories": ["Salaries", "Freelancers"],
+  "retainer_hours": {"Halcyon Hotels": 120, "Opal Fitness": 70, "Northpoint Dental": 60, "Verde Organics": 90, "Kestrel Logistics": 60},
+  "currency": "EUR",
+  "language": "en",
+  "revenue_basis": "invoiced",
+  "partial_month": "include",
+  "period": {"start": "2026-01-01", "end": "2026-09-30", "year": 2026},
+  "base_dir": "../data",
+  "sources": [
+    {
+      "file": "invoices.xlsx", "sheet": "Invoices", "header_row": 2, "role": "revenue",
+      "columns": {"date": "Date", "amount": "Amount (€)", "client": "Client", "project": "Project",
+                  "status": "Status", "stream": "Service", "due_date": "Due"},
+      "unpaid_values": ["Sent", "Overdue"],
+      "exclude_if": [{"column": "Status", "values": ["Cancelled"]}]
+    },
+    {
+      "file": "bank_export.csv", "role": "expenses",
+      "columns": {"date": "Date", "amount": "Amount", "vendor": "Description", "balance": "Balance"},
+      "rules": [
+        {"column": "Description", "contains": ["PAYMENT FROM"], "exclude": true, "reason": "client payment — revenue is counted from invoices"},
+        {"column": "Description", "contains": ["DIVIDEND"], "exclude": true, "owner": true, "reason": "owner's pay"},
+        {"column": "Description", "contains": ["OWN SAVINGS"], "exclude": true, "reason": "transfer between own accounts"},
+        {"column": "Description", "contains": ["VAT PAYMENT"], "exclude": true, "reason": "VAT passed through to the tax office"},
+        {"column": "Description", "contains": ["SALARY"], "set": {"category": "Salaries"}},
+        {"column": "Description", "contains": ["UPWORK", "CONTRACTOR"], "set": {"category": "Freelancers"}},
+        {"column": "Description", "contains": ["RENT"], "set": {"category": "Office"}},
+        {"column": "Description", "contains": ["ADOBE", "FIGMA", "NOTION"], "set": {"category": "Software"}},
+        {"column": "Description", "contains": ["GOOGLE ADS"], "set": {"category": "Ad spend (rebilled)"}},
+        {"column": "Description", "contains": ["ACCOUNTANT"], "set": {"category": "Professional fees"}},
+        {"column": "Description", "contains": ["LAPTOPS"], "set": {"category": "Equipment"}}
+      ]
+    },
+    {
+      "file": "timesheet.csv", "role": "hours",
+      "columns": {"date": "date", "person": "person", "client": "client", "project": "project", "hours": "hours"},
+      "default_cost_rate": 38,
+      "non_billable_projects": ["Internal"]
+    }
+  ]
+}

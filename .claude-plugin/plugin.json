@@ -1,0 +1,11 @@
+{
+  "name": "agency-finance",
+  "displayName": "Sumzee — Agency Finance",
+  "version": "1.0.0",
+  "description": "Two skills for small service businesses: Profit Agent shows what your agency really makes and what to fix; System Builder designs your finance system and builds it in Airtable.",
+  "author": {"name": "Sumzee", "url": "https://www.sumzee.co"},
+  "homepage": "https://www.sumzee.co",
+  "repository": "https://github.com/sumzee/agency-finance-skills",
+  "license": "MIT",
+  "keywords": ["finance", "agency", "profit", "cash flow", "airtable", "small business", "dashboard"]
+}

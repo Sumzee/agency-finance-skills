@@ -1,0 +1,75 @@
+{
+  "language": "en",
+  "title": "Where Lumen Creative's money went",
+  "headline": "Jan–Sep 2026: €766k invoiced, €611k to run the agency — €156k profit before your dividends, €84k after. But only €20k is in the bank.",
+  "verdict_text": "On paper Lumen makes money: a 20% margin, 11% after the €72k you took out. But cash covers about a week of costs, while €117k sits in invoices clients haven't paid yet.",
+  "actions": [
+    {
+      "title": "Collect the two overdue invoices this week",
+      "text": "Tidewater Energy's annual report (€18,000, due 23 Sep) and Opal Fitness's event photos (€2,400). Another €96k of September invoices falls due in October.",
+      "effect": 20400,
+      "kind": "one_off"
+    },
+    {
+      "title": "Check the two missing Kestrel retainer invoices",
+      "text": "Kestrel Logistics pays €7,500 every month but nothing was invoiced for April and July — a missed invoice or a paused retainer?",
+      "effect": 15000,
+      "kind": "one_off"
+    },
+    {
+      "title": "Bring team cost back to 55% of revenue",
+      "text": "Salaries and freelancers take 67% of revenue. Repricing Halden-type projects and the two retainers that run over their hours closes most of the gap.",
+      "effect": 9861.01,
+      "kind": "monthly"
+    }
+  ],
+  "insights": [
+    {
+      "title": "Halden Retail loses money",
+      "text": "It brought 11.6% of revenue, but both rebrand phases cost more in team time than they earned — about 2,400 hours for €89k.",
+      "tone": "warning"
+    },
+    {
+      "title": "Two retainers take far more hours than they pay for",
+      "text": "Northpoint Dental gets about 90 hours a month against 60 agreed, Halcyon Hotels about 147 against 120. Across all five retainers the team works 15% over.",
+      "tone": "warning"
+    },
+    {
+      "title": "The last quarter got better",
+      "text": "July–September margin was 29% vs 25% the quarter before: same revenue, 6% lower costs.",
+      "tone": "good"
+    },
+    {
+      "title": "January ran at a loss",
+      "text": "Project invoices landed in later months while salaries didn't — the cash dip started there.",
+      "tone": "neutral"
+    }
+  ],
+  "locked": [
+    {
+      "id": "cash_forecast",
+      "title": "Will there be enough cash in December?",
+      "text": "With payroll on the 25th and VAT in December, the next 6 weeks decide a lot.",
+      "missing": [
+        "expected payment dates for open invoices",
+        "planned big costs (VAT, bonuses, equipment)"
+      ]
+    },
+    {
+      "id": "utilization_pct",
+      "title": "How busy the team really is",
+      "text": "10,250 hours were logged, 85% billable — but against what capacity?",
+      "missing": [
+        "available hours per person per month"
+      ]
+    },
+    {
+      "id": "backlog_months",
+      "title": "How many months of work are already signed",
+      "missing": [
+        "signed but not yet delivered work, with amounts"
+      ]
+    }
+  ],
+  "brief_note": "Wants to know why the bank balance falls while the agency is profitable"
+}

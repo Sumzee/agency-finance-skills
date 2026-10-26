@@ -1,0 +1,50 @@
+{
+  "id": "multicurrency",
+  "label": {"en": "Several currencies", "ru": "Несколько валют"},
+  "when": {"en": "Only if the interview named more than one currency.", "ru": "Только если в интервью назвали больше одной валюты."},
+  "tables": [
+    {
+      "name": "Exchange rates",
+      "label": {"en": "Exchange rates", "ru": "Курсы валют"},
+      "group": "money",
+      "description": {"en": "One record = the average rate of one currency to {{BASE}} for one month.", "ru": "Одна запись = средний курс одной валюты к {{BASE}} за один месяц."},
+      "entered_by": {"en": "Once a month, after the month ends", "ru": "Раз в месяц, после окончания месяца"},
+      "fields": [
+        {"name": "Rate key", "type": "singleLineText", "description": {"en": "Month and currency, e.g. 2026-03 USD. Must match exactly — automations look it up.", "ru": "Месяц и валюта, например 2026-03 USD. Должно совпадать точно — по этому ключу ищет автоматизация."}},
+        {"name": "Month", "type": "singleLineText", "description": {"en": "YYYY-MM", "ru": "ГГГГ-ММ"}},
+        {"name": "Currency", "type": "singleSelect", "choices": "{{OTHER_CURRENCIES}}"},
+        {"name": "Rate to base", "type": "number", "precision": 6, "description": {"en": "How many {{BASE}} one unit of the currency is worth.", "ru": "Сколько {{BASE}} стоит одна единица валюты."}}
+      ]
+    }
+  ],
+  "extend": {
+    "Payments": [
+      {"name": "Currency", "type": "singleSelect", "choices": "{{CURRENCIES}}", "required": true},
+      {"name": "Rate key", "type": "formula", "formula": "IF(AND({Payment date}, {Currency} != '{{BASE}}'), DATETIME_FORMAT({Payment date}, 'YYYY-MM') & ' ' & {Currency}, '')", "description": {"en": "Technical field for finding the rate. Do not edit.", "ru": "Техническое поле для поиска курса. Не трогать."}},
+      {"name": "Rate", "type": "link", "to": "Exchange rates", "inverse": "Payments", "description": {"en": "Filled by an automation from the payment month and currency. Do not fill by hand.", "ru": "Заполняется автоматизацией по месяцу и валюте оплаты. Руками не заполнять."}},
+      {"name": "Rate value", "type": "rollup", "via": "Rate", "field": "Rate to base", "formula": "MAX(values)", "description": {"en": "Technical copy for formulas. Do not edit.", "ru": "Техническая копия для формул. Не трогать."}},
+      {"name": "Amount in base", "type": "formula", "formula": "IF({Currency} = '{{BASE}}', {Amount}, IF({Rate value}, {Amount} * {Rate value}, 0))", "description": {"en": "Amount converted to {{BASE}}. Computed.", "ru": "Сумма в {{BASE}}. Считается само."}}
+    ],
+    "Expenses": [
+      {"name": "Currency", "type": "singleSelect", "choices": "{{CURRENCIES}}", "required": true},
+      {"name": "Rate key", "type": "formula", "formula": "IF(AND({Date}, {Currency} != '{{BASE}}'), DATETIME_FORMAT({Date}, 'YYYY-MM') & ' ' & {Currency}, '')", "description": {"en": "Technical field for finding the rate. Do not edit.", "ru": "Техническое поле для поиска курса. Не трогать."}},
+      {"name": "Rate", "type": "link", "to": "Exchange rates", "inverse": "Expenses", "description": {"en": "Filled by an automation. Do not fill by hand.", "ru": "Заполняется автоматизацией. Руками не заполнять."}},
+      {"name": "Rate value", "type": "rollup", "via": "Rate", "field": "Rate to base", "formula": "MAX(values)", "description": {"en": "Technical copy for formulas. Do not edit.", "ru": "Техническая копия для формул. Не трогать."}},
+      {"name": "Amount in base", "type": "formula", "formula": "IF({Currency} = '{{BASE}}', {Amount}, IF({Rate value}, {Amount} * {Rate value}, 0))", "description": {"en": "Amount converted to {{BASE}}. Computed.", "ru": "Сумма в {{BASE}}. Считается само."}}
+    ]
+  },
+  "override": {
+    "Payments": {
+      "Revenue amount": "IF(AND({Status} = 'Paid', {Kind} != 'Internal transfer'), IF({Kind} = 'Refund', -{Amount in base}, {Amount in base}), 0)",
+      "Check": "IF(AND({Status} = 'Paid', NOT({Payment date})), '⚠ no payment date', IF(AND({Currency} != '{{BASE}}', NOT({Rate value})), '⚠ no exchange rate', IF(AND({Status} = 'Paid', NOT({Account})), '⚠ no account', '')))"
+    },
+    "Expenses": {
+      "Cost amount": "IF(AND({Status} = 'Paid', OR({Kind} = 'Expense', {Kind} = 'Tax')), {Amount in base}, 0)",
+      "Check": "IF(NOT({Date}), '⚠ no date', IF(NOT({Category}), '⚠ no category', IF(AND({Currency} != '{{BASE}}', NOT({Rate value})), '⚠ no exchange rate', '')))"
+    }
+  },
+  "notes": {"en": "Account balances (Cash in / Cash out) stay in each account's own currency — an account holds one currency.", "ru": "Остатки по счетам (Cash in / Cash out) считаются в валюте самого счёта — у счёта одна валюта."},
+  "automations": [
+    {"id": "link_rate", "label": {"en": "Attach the monthly rate", "ru": "Подтягивать курс месяца"}, "why": {"en": "Rates are found by date, nobody picks the month by hand — so amounts never silently become zero.", "ru": "Курс находится по дате, никто не выбирает месяц руками — суммы не обнуляются молча."}, "trigger": "Payments / Expenses: Rate key is not empty and Rate is empty", "action": "Find Exchange rates where Rate key = this Rate key → link it"}
+  ]
+}

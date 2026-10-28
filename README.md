@@ -10,6 +10,10 @@ These skills give you a straight answer from the spreadsheets you already have â
 
 *A real run on a fictional 15-person agency. [Open the full dashboard](examples/lumen-creative/output/profit-dashboard.html).*
 
+**â–¶ See it work in 2 minutes:** [watch the video](https://youtu.be/14dzva8FeTo)
+
+[![See it work in 2 minutes](https://img.youtube.com/vi/14dzva8FeTo/hqdefault.jpg)](https://youtu.be/14dzva8FeTo)
+
 ## What's inside
 
 | Skill | What you give it | What you get |

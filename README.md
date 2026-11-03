@@ -54,6 +54,7 @@ The System Builder needs the Airtable connector (with access to a whole workspac
 - The dashboard's optional "Set it up with Sumzee" and "Email the brief" buttons share a short brief, shown on the page first: business name, team size, revenue range, margin, verdict, and which data you have. It reaches Sumzee through Calendly booking notes or your email app, and only if you click.
 - The install guides and the System Builder's schema page load fonts from Google Fonts.
 - The result is a management view, not accounting or tax advice.
+- [Privacy policy](https://www.sumzee.co/privacy)
 
 ## Want it finished for you?
 
